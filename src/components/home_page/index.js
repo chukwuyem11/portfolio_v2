@@ -70,6 +70,7 @@ const HomePage = () => {
   const past_works = [
     {
       title: "Petmax",
+      url: "https://petmaxapp.com/",
       logo: "petmax_logo.svg",
       bg: "#111",
       bg_hover: "#000",
@@ -81,12 +82,34 @@ const HomePage = () => {
           title: "react",
         },
         {
+          title: "css",
+        },
+        {
           title: "nextjs",
+        },
+        {
+          title: "capacitorjs",
+        },
+        {
+          title: "framer-motion",
+        },
+        {
+          title: "emotionjs",
+        },
+        {
+          title: "expressjs",
+        },
+        {
+          title: "nodejs",
+        },
+        {
+          title: "sequilize",
         },
       ],
     },
     {
       title: "Digages",
+      url: "https://digages.com",
       logo: "digages_logo.svg",
       bg: "#f0effb",
       bg_hover: "#d3cff5",
@@ -98,12 +121,32 @@ const HomePage = () => {
           title: "react",
         },
         {
+          title: "css",
+        },
+        {
           title: "nextjs",
+        },
+
+        {
+          title: "framer-motion",
+        },
+        {
+          title: "emotionjs",
+        },
+        {
+          title: "expressjs",
+        },
+        {
+          title: "nodejs",
+        },
+        {
+          title: "sequilize",
         },
       ],
     },
     {
       title: "Debby Dot",
+      url: "https://debbydotattractions.com/",
       logo: "debby_dot.png",
       bg: "#fef5e6",
       bg_hover: "#fce2b5",
@@ -115,12 +158,34 @@ const HomePage = () => {
           title: "react",
         },
         {
+          title: "css",
+        },
+        {
           title: "nextjs",
+        },
+        {
+          title: "capacitorjs",
+        },
+        {
+          title: "framer-motion",
+        },
+        {
+          title: "emotionjs",
+        },
+        {
+          title: "expressjs",
+        },
+        {
+          title: "nodejs",
+        },
+        {
+          title: "sequilize",
         },
       ],
     },
     {
       title: "Ebby Skincare",
+      url: "https://ebbysglowskincare.com/",
       logo: "ebbys_glow.png",
       bg: "#fde9f3",
       bg_hover: "#f9bddd",
@@ -132,12 +197,34 @@ const HomePage = () => {
           title: "react",
         },
         {
+          title: "css",
+        },
+        {
           title: "nextjs",
+        },
+        {
+          title: "capacitorjs",
+        },
+        {
+          title: "framer-motion",
+        },
+        {
+          title: "emotionjs",
+        },
+        {
+          title: "expressjs",
+        },
+        {
+          title: "nodejs",
+        },
+        {
+          title: "sequilize",
         },
       ],
     },
     {
       title: "Glacee waters",
+      url: "https://glaceewater.com/",
       logo: "glacee_logo.png",
       bg: "#e6f6f9",
       bg_hover: "#b6e5ed",
@@ -146,10 +233,10 @@ const HomePage = () => {
       height: "auto",
       tools: [
         {
-          title: "react",
+          title: "wordpress",
         },
         {
-          title: "nextjs",
+          title: "elementor",
         },
       ],
     },
@@ -406,32 +493,34 @@ const HomePage = () => {
                   }}
                   key={work.title}
                 >
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.99 }}
-                    animate={{ opacity: 1, scale: 0.99 }}
-                    exit={{ opacity: 0, scale: 0.99 }}
-                    whileHover={{
-                      backgroundColor: work.bg_hover,
-                      scale: 1.01,
-                    }}
-                    css={mq({
-                      width: "100%",
-                      height: [200, 200, 300],
-                      borderRadius: 10,
-                      backgroundColor: work.bg,
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                    })}
-                  >
-                    <img
+                  <a href={work.url} target="_blank">
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.99 }}
+                      animate={{ opacity: 1, scale: 0.99 }}
+                      exit={{ opacity: 0, scale: 0.99 }}
+                      whileHover={{
+                        backgroundColor: work.bg_hover,
+                        scale: 1.01,
+                      }}
                       css={mq({
-                        width: work.width,
-                        height: work.height,
+                        width: "100%",
+                        height: [200, 200, 300],
+                        borderRadius: 10,
+                        backgroundColor: work.bg,
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
                       })}
-                      src={`home/past_works/${work.logo}`}
-                    />
-                  </motion.div>
+                    >
+                      <img
+                        css={mq({
+                          width: work.width,
+                          height: work.height,
+                        })}
+                        src={`home/past_works/${work.logo}`}
+                      />
+                    </motion.div>
+                  </a>
                   <div
                     css={mq({
                       width: "100%",
@@ -455,25 +544,94 @@ const HomePage = () => {
                   </div>
 
                   <div
-                    css={{
+                    css={mq({
                       display: "flex",
+                      flexWrap: "wrap",
                       justifyContent: "left",
-                    }}
+                      marginTop: [10, 10, 10],
+                    })}
                   >
                     {work.tools.map((tool) => (
-                      <div
+                      <motion.div
+                        whileHover={{
+                          backgroundColor: "#000",
+                          color: "#fff",
+                        }}
+                        transition={{
+                          ease: "easeInOut",
+                          duration: 0.2,
+                        }}
                         css={{
                           marginRight: 10,
+                          padding: "2px 8px",
+                          fontWeight: 500,
+                          fontSize: 16,
+                          borderRadius: 14,
+                          backgroundColor: "#f4f4f4",
+                          marginBottom: 10,
                         }}
                       >
-                        {tool.title}
-                      </div>
+                        #{tool.title}
+                      </motion.div>
                     ))}
                   </div>
                 </div>
               ))}
           </div>
         </div>{" "}
+      </div>
+      <div
+        css={{
+          backgroundColor: "#f4f4f4",
+          padding: "60px 0px",
+        }}
+      >
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          css={mq({
+            fontSize: [32, 42, 62],
+            fontWeight: 800,
+            textAlign: "center",
+          })}
+        >
+          Built by me.
+        </motion.div>
+        <div
+          css={{
+            display: "flex",
+            justifyContent: "center",
+            marginTop: 20,
+          }}
+        >
+          {social_links.map((link) => (
+            <motion.div
+              key={link.title}
+              whileHover={{
+                backgroundColor: "#eee",
+              }}
+              css={mq({
+                width: [24, 24, 34],
+                height: [24, 24, 34],
+                background: "#fff",
+                borderRadius: "100%",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                margin: "0px 4px",
+              })}
+            >
+              <img
+                css={mq({
+                  width: [18, 18, 24],
+                  height: [18, 18, 24],
+                })}
+                src={`home/tabs/${link.image}`}
+              />
+            </motion.div>
+          ))}
+        </div>
       </div>
     </div>
   );
