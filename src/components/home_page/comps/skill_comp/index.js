@@ -24,7 +24,7 @@ const SkillComp = (props) => {
           css={mq({
             width: [40, 40, 80],
             height: [40, 40, 80],
-            margin: 8,
+            margin: 16,
             background: "#fff",
             borderRadius: "100%",
             display: "flex",

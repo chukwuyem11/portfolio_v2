@@ -109,6 +109,17 @@ const HomePage = () => {
           title: "sequilize",
         },
       ],
+      description:
+        "An app for viewing downloading and sharing cute videos of pets",
+      job_role: [
+        {
+          role: "Built a complex user interfaces similar to Tiktok where I single handedly developed and deployed both an Android and an IOS apps on the app stores",
+        },
+        {
+          role: "Created a web app dashboard for uploading and managing videos",
+        },
+      ],
+      grid_position: "ltr",
     },
     {
       title: "Digages",
@@ -146,6 +157,20 @@ const HomePage = () => {
           title: "sequilize",
         },
       ],
+
+      description: "All in one link page builder for business owners",
+      job_role: [
+        {
+          role: "Led and worked with a wonderful and hardworking team which led to rapid implementation of product core features and solution",
+        },
+        {
+          role: "Built user interface for easy and effective link building with mobile responsiveness",
+        },
+        {
+          role: "Built easy to use and mobile responsive dashboards",
+        },
+      ],
+      grid_position: "rtr",
     },
     {
       title: "Debby Dot",
@@ -185,6 +210,19 @@ const HomePage = () => {
           title: "sequilize",
         },
       ],
+      description: "An E-commerce shopping platform",
+      job_role: [
+        {
+          role: "Built an e-commerce mobile application for ordering products",
+        },
+        {
+          role: "created a complex interface for sorting and filtering products using different attributes",
+        },
+        {
+          role: "worked with and integrated wordpress and ecommerce API with the mobile app",
+        },
+      ],
+      grid_position: "ltr",
     },
     {
       title: "Ebby Skincare",
@@ -224,6 +262,19 @@ const HomePage = () => {
           title: "sequilize",
         },
       ],
+      description: "An E-commerce shopping platform",
+      job_role: [
+        {
+          role: "Built an e-commerce mobile application for ordering products",
+        },
+        {
+          role: "created a complex interface for sorting and filtering products using different attributes",
+        },
+        {
+          role: "worked with and integrated wordpress and ecommerce API with the mobile app",
+        },
+      ],
+      grid_position: "rtr",
     },
     {
       title: "Glacee waters",
@@ -242,6 +293,13 @@ const HomePage = () => {
           title: "elementor",
         },
       ],
+      description: "An wordpress website for a water producing company",
+      job_role: [
+        {
+          role: "Built a standard company website a water producing company",
+        },
+      ],
+      grid_position: "ltr",
     },
   ];
 
@@ -426,7 +484,7 @@ const HomePage = () => {
               display: "flex",
               justifyContent: "space-evenly",
               flexWrap: "wrap",
-              width: ["70%", "70%", "30%"],
+              width: ["70%", "70%", "60%"],
               padding: ["0px 16px", "0px 16px", 0],
               marginTop: 40,
               marginBottom: 40,
@@ -501,7 +559,7 @@ const HomePage = () => {
                 gridTemplateColumns: [
                   "repeat(1, 1fr)",
                   "repeat(1, 1fr)",
-                  "repeat(2, 1fr)",
+                  "repeat(1, 1fr)",
                 ],
                 width: ["100%", "100%", "70%"],
                 padding: ["0px 16px", "0px 16px", 0],
@@ -513,94 +571,167 @@ const HomePage = () => {
           >
             {past_works
               .filter((work) => work.categories.includes(selected))
-              .map((work) => (
+              .map((work, index) => (
                 <div
-                  css={{
+                  css={mq({
                     width: "100%",
-                  }}
+                    display: "grid",
+                    marginBottom: 50,
+                    gridTemplateColumns: [
+                      "repeat(1, 1fr)",
+                      "repeat(1, 1fr)",
+                      "repeat(2, 1fr)",
+                    ],
+                    width: ["100%", "100%", "100%"],
+
+                    rowGap: [20, 20, 40],
+                    columnGap: [20, 20, 40],
+                  })}
                   key={work.title}
                 >
-                  <a href={work.url} target="_blank">
-                    <motion.div
-                      initial={{ opacity: 0, scale: 0.99 }}
-                      animate={{ opacity: 1, scale: 0.99 }}
-                      exit={{ opacity: 0, scale: 0.99 }}
-                      whileHover={{
-                        backgroundColor: work.bg_hover,
-                        scale: 1.01,
-                      }}
-                      css={mq({
-                        width: "100%",
-                        height: [200, 200, 300],
-                        borderRadius: 10,
-                        backgroundColor: work.bg,
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                      })}
-                    >
-                      <img
+                  <div>
+                    <a href={work.url} target="_blank">
+                      <motion.div
+                        initial={{ opacity: 0, scale: 0.99 }}
+                        animate={{ opacity: 1, scale: 0.99 }}
+                        exit={{ opacity: 0, scale: 0.99 }}
+                        whileHover={{
+                          backgroundColor: work.bg_hover,
+                          scale: 1.01,
+                        }}
                         css={mq({
-                          width: work.width,
-                          height: work.height,
+                          width: "100%",
+                          height: [200, 200, "100%"],
+                          borderRadius: 10,
+                          backgroundColor: work.bg,
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
                         })}
-                        src={`home/past_works/${work.logo}`}
-                      />
-                    </motion.div>
-                  </a>
-                  <div
-                    css={mq({
-                      width: "100%",
-                      fontSize: [22, 22, 24],
-                      fontWeight: 800,
-                      marginTop: [10, 10, 20],
-                    })}
-                  >
-                    {work.title}
-                  </div>
-                  <div
-                    css={mq({
-                      width: "100%",
-                      fontSize: [22, 22, 24],
-                      fontWeight: 800,
-                      color: "#777",
-                      marginTop: [10, 10, 20],
-                    })}
-                  >
-                    Tools
+                      >
+                        <img
+                          css={mq({
+                            width: work.width,
+                            height: work.height,
+                          })}
+                          src={`home/past_works/${work.logo}`}
+                        />
+                      </motion.div>
+                    </a>
                   </div>
 
-                  <div
-                    css={mq({
-                      display: "flex",
-                      flexWrap: "wrap",
-                      justifyContent: "left",
-                      marginTop: [10, 10, 10],
-                    })}
-                  >
-                    {work.tools.map((tool) => (
-                      <motion.div
-                        whileHover={{
-                          backgroundColor: "#000",
-                          color: "#fff",
-                        }}
-                        transition={{
-                          ease: "easeInOut",
-                          duration: 0.2,
-                        }}
+                  <div>
+                    <div
+                    // css={{
+                    //   display: "flex",
+                    //   justifyContent: "left",
+                    // }}
+                    >
+                      <div
+                        css={(theme) =>
+                          mq({
+                            width: "100%",
+                            fontSize: [22, 22, 24],
+                            fontWeight: 800,
+                            marginTop: [10, 10, 20],
+                            color: theme.colors.Neutral_600,
+                          })
+                        }
+                      >
+                        {work.title}
+                      </div>
+                      <div
                         css={{
-                          marginRight: 10,
-                          padding: "2px 8px",
-                          fontWeight: 500,
-                          fontSize: 16,
-                          borderRadius: 14,
-                          backgroundColor: "#f4f4f4",
-                          marginBottom: 10,
+                          marginTop: 8,
                         }}
                       >
-                        #{tool.title}
-                      </motion.div>
-                    ))}
+                        <a href={work.url} target="_blank">
+                          <img
+                            css={{
+                              width: 24,
+                              height: 24,
+                            }}
+                            src={`/svg/link.svg`}
+                          />
+                        </a>
+                      </div>
+                    </div>
+                    <div>
+                      <div
+                        css={(theme) => ({
+                          fontSize: 16,
+                          fontWeight: 600,
+                          textTransform: "capitalize",
+                          color: theme.colors.Neutral_800,
+                          marginTop: 10,
+                        })}
+                      >
+                        {work.description}
+                      </div>
+                      <ul
+                        css={{
+                          marginTop: 20,
+                        }}
+                      >
+                        {work.job_role.map((role) => (
+                          <li
+                            css={(theme) => ({
+                              fontSize: 16,
+                              fontWeight: 500,
+                              textTransform: "capitalize",
+                              color: theme.colors.Neutral_700,
+                              marginBottom: 10,
+                            })}
+                          >
+                            {role.role}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div
+                      css={mq({
+                        width: "100%",
+                        fontSize: [22, 22, 24],
+                        fontWeight: 800,
+                        color: "#777",
+                        marginTop: [10, 10, 20],
+                      })}
+                    >
+                      Tools
+                    </div>
+
+                    <div
+                      css={mq({
+                        display: "flex",
+                        flexWrap: "wrap",
+                        justifyContent: "left",
+                        marginTop: [10, 10, 10],
+                      })}
+                    >
+                      {work.tools.map((tool) => (
+                        <motion.div
+                          whileHover={{
+                            backgroundColor: "#000",
+                            color: "#fff",
+                          }}
+                          transition={{
+                            ease: "easeInOut",
+                            duration: 0.2,
+                          }}
+                          css={{
+                            marginRight: 10,
+                            padding: "2px 8px",
+                            fontWeight: 500,
+                            fontSize: 16,
+                            borderRadius: 14,
+                            backgroundColor: "#f4f4f4",
+                            marginBottom: 10,
+                          }}
+                        >
+                          #{tool.title}
+                        </motion.div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               ))}
