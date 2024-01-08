@@ -3,10 +3,13 @@ import facepaint from "facepaint";
 import { motion, AnimatePresence, AnimateSharedLayout } from "framer-motion";
 import React, { useState, useContext } from "react";
 import SkillComp from "./comps/skill_comp";
+import { useRouter } from "next/router";
+
 const breakpoints = [576, 768, 1200];
 const mq = facepaint(breakpoints.map((bp) => `@media (min-width: ${bp}px)`));
 const HomePage = () => {
   const [selected, setSelected] = useState("all");
+  const router = useRouter();
 
   const social_links = [
     {
@@ -364,6 +367,30 @@ const HomePage = () => {
               />
             </motion.div>
           ))}
+
+          <motion.div
+            whileHover={{
+              backgroundColor: "#000",
+              color: "#fff",
+            }}
+            css={mq({
+              height: [24, 24, 34],
+              background: "#fff",
+              borderRadius: 30,
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              margin: "0px 4px",
+              textTransform: "capitalize",
+              padding: "0px 8px",
+              fontSize: [14, 14, 16],
+              fontWeight: 500,
+              cursor: "pointer",
+            })}
+            onClick={() => router.push("/resume")}
+          >
+            my resume
+          </motion.div>
         </div>
 
         <div
@@ -631,6 +658,29 @@ const HomePage = () => {
               />
             </motion.div>
           ))}
+          <motion.div
+            whileHover={{
+              backgroundColor: "#000",
+              color: "#fff",
+            }}
+            css={mq({
+              height: [24, 24, 34],
+              background: "#fff",
+              borderRadius: 30,
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              margin: "0px 4px",
+              textTransform: "capitalize",
+              padding: "0px 8px",
+              fontSize: [14, 14, 16],
+              fontWeight: 500,
+              cursor: "pointer",
+            })}
+            onClick={() => router.push("/resume")}
+          >
+            my resume
+          </motion.div>
         </div>
       </div>
     </div>
