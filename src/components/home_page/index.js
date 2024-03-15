@@ -15,10 +15,17 @@ const HomePage = () => {
     {
       title: "mail",
       image: "mail.svg",
+      link: "mailto:eboigbodinchukwuyem@gmail.com",
     },
     {
       title: "linkedn",
       image: "lindn.svg",
+      link: "https://ng.linkedin.com/in/chukwuyem-eboigbodin-37b245217",
+    },
+    {
+      title: "github",
+      image: "github.svg",
+      link: "https://github.com/chukwuyem11",
     },
   ];
 
@@ -113,10 +120,13 @@ const HomePage = () => {
         "An app for viewing downloading and sharing cute videos of pets",
       job_role: [
         {
-          role: "Built a complex user interfaces similar to Tiktok where I single handedly developed and deployed both an Android and an IOS apps on the app stores",
+          role: "Worked with a team of 6 accross various fields from graphic design to product design, marketing and engineering, together we built an Android and IOS mobile application for a vetinary business.",
         },
         {
-          role: "Created a web app dashboard for uploading and managing videos",
+          role: "It was a Tiktok like Mobile app, for viewing cute videos on the web, where I worked on the development and deployment of both the Android and an IOS apps on the app stores, using web technologies",
+        },
+        {
+          role: "Worked with the team on the web dashboard for uploading and managing Petmax videos",
         },
       ],
       grid_position: "ltr",
@@ -164,10 +174,10 @@ const HomePage = () => {
           role: "Led and worked with a wonderful and hardworking team which led to rapid implementation of product core features and solution",
         },
         {
-          role: "Built user interface for easy and effective link building with mobile responsiveness",
+          role: "Worked with the team on the user interface for easy and effective link building with mobile responsiveness",
         },
         {
-          role: "Built easy to use and mobile responsive dashboards",
+          role: "We built easy to use and mobile responsive dashboards",
         },
       ],
       grid_position: "rtr",
@@ -213,13 +223,13 @@ const HomePage = () => {
       description: "An E-commerce shopping platform",
       job_role: [
         {
-          role: "Built an e-commerce mobile application for ordering products",
+          role: "While at doncept, we Built a multi-vendor e-commerce Android and IOS mobile application",
         },
         {
-          role: "created a complex interface for sorting and filtering products using different attributes",
+          role: "we implemented a complex interface for sorting and filtering products using different attributes",
         },
         {
-          role: "worked with and integrated wordpress and ecommerce API with the mobile app",
+          role: "We integrated the mobile appliation with an external content management platform API",
         },
       ],
       grid_position: "ltr",
@@ -265,13 +275,13 @@ const HomePage = () => {
       description: "An E-commerce shopping platform",
       job_role: [
         {
-          role: "Built an e-commerce mobile application for ordering products",
+          role: "We built a multi-vendor e-commerce Android and IOS mobile application",
         },
         {
-          role: "created a complex interface for sorting and filtering products using different attributes",
+          role: "we implemented a complex interface for sorting and filtering products using different attributes",
         },
         {
-          role: "worked with and integrated wordpress and ecommerce API with the mobile app",
+          role: "We integrated the mobile appliation with an external content management platform API",
         },
       ],
       grid_position: "rtr",
@@ -296,7 +306,7 @@ const HomePage = () => {
       description: "An wordpress website for a water producing company",
       job_role: [
         {
-          role: "Built a standard company website a water producing company",
+          role: "We built a standard company website a water producing company",
         },
       ],
       grid_position: "ltr",
@@ -400,30 +410,31 @@ const HomePage = () => {
           }}
         >
           {social_links.map((link) => (
-            <motion.div
-              key={link.title}
-              whileHover={{
-                backgroundColor: "#eee",
-              }}
-              css={mq({
-                width: [24, 24, 34],
-                height: [24, 24, 34],
-                background: "#fff",
-                borderRadius: "100%",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                margin: "0px 4px",
-              })}
-            >
-              <img
+            <a key={link.title} href={link.link} target="_blank">
+              <motion.div
+                whileHover={{
+                  backgroundColor: "#eee",
+                }}
                 css={mq({
-                  width: [18, 18, 24],
-                  height: [18, 18, 24],
+                  width: [24, 24, 34],
+                  height: [24, 24, 34],
+                  background: "#fff",
+                  borderRadius: "100%",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  margin: "0px 4px",
                 })}
-                src={`home/tabs/${link.image}`}
-              />
-            </motion.div>
+              >
+                <img
+                  css={mq({
+                    width: [18, 18, 24],
+                    height: [18, 18, 24],
+                  })}
+                  src={`home/tabs/${link.image}`}
+                />
+              </motion.div>
+            </a>
           ))}
 
           <motion.div
@@ -661,7 +672,8 @@ const HomePage = () => {
                         css={(theme) => ({
                           fontSize: 16,
                           fontWeight: 600,
-                          textTransform: "capitalize",
+                          // textTransform: "capitalize",
+
                           color: theme.colors.Neutral_800,
                           marginTop: 10,
                         })}
@@ -678,7 +690,7 @@ const HomePage = () => {
                             css={(theme) => ({
                               fontSize: 16,
                               fontWeight: 500,
-                              textTransform: "capitalize",
+                              // textTransform: "capitalize",
                               color: theme.colors.Neutral_700,
                               marginBottom: 10,
                             })}
@@ -754,8 +766,31 @@ const HomePage = () => {
             textAlign: "center",
           })}
         >
-          Built by me.
+          Built with{" "}
         </motion.div>
+
+        <div
+          css={{
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <motion.img
+            initial={{ scale: 0.9 }}
+            animate={{ scale: 1 }}
+            transition={{
+              duration: 0.5,
+              repeat: Infinity,
+              ease: "easeInOut",
+              repeatType: "reverse",
+            }}
+            css={mq({
+              width: 42,
+              height: 42,
+            })}
+            src={`home/cv-heart.svg`}
+          />
+        </div>
         <div
           css={{
             display: "flex",
@@ -764,30 +799,31 @@ const HomePage = () => {
           }}
         >
           {social_links.map((link) => (
-            <motion.div
-              key={link.title}
-              whileHover={{
-                backgroundColor: "#eee",
-              }}
-              css={mq({
-                width: [24, 24, 34],
-                height: [24, 24, 34],
-                background: "#fff",
-                borderRadius: "100%",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                margin: "0px 4px",
-              })}
-            >
-              <img
+            <a key={link.title} href={link.link} target="_blank">
+              <motion.div
+                whileHover={{
+                  backgroundColor: "#eee",
+                }}
                 css={mq({
-                  width: [18, 18, 24],
-                  height: [18, 18, 24],
+                  width: [24, 24, 34],
+                  height: [24, 24, 34],
+                  background: "#fff",
+                  borderRadius: "100%",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  margin: "0px 4px",
                 })}
-                src={`home/tabs/${link.image}`}
-              />
-            </motion.div>
+              >
+                <img
+                  css={mq({
+                    width: [18, 18, 24],
+                    height: [18, 18, 24],
+                  })}
+                  src={`home/tabs/${link.image}`}
+                />
+              </motion.div>
+            </a>
           ))}
           <motion.div
             whileHover={{

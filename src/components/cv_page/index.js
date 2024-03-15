@@ -36,6 +36,87 @@ const ResumePageComp = () => {
       "I am a passionate front-end developer with four years of hands-on experience in crafting engaging and user-friendly web experiences. My journey in the world of web development has been marked by a commitment to turning ideas into interactive and visually appealing realities.",
     past_works: [
       {
+        title: "Digages",
+        role_type: "remote",
+        period: "Feb 2022 - October 2022",
+
+        description: "All in one link page builder for business owners",
+        job_role: [
+          {
+            role: "Led and worked with a wonderful and hardworking team which led to rapid implementation of product core features and solution",
+          },
+          {
+            role: "Worked with the team on the user interface for easy and effective link building with mobile responsiveness",
+          },
+          {
+            role: "We built easy to use and mobile responsive dashboards",
+          },
+        ],
+      },
+      {
+        title: "Petmax mobile app",
+        role_type: "remote",
+        period: "January 2022 - November 2023",
+        description:
+          "An app for viewing downloading and sharing cute videos of pets",
+        job_role: [
+          {
+            role: "Worked with a team of 6 accross various fields from graphic design to product design, marketing and engineering, together we built an Android and IOS mobile application for a vetinary business.",
+          },
+          {
+            role: "It was a Tiktok like Mobile app, for viewing cute videos on the web, where I worked on the development and deployment of both the Android and an IOS apps on the app stores, using web technologies",
+          },
+          {
+            role: "Worked with the team on the web dashboard for uploading and managing Petmax videos",
+          },
+        ],
+      },
+      {
+        title: "Debbydot mobile app",
+        role_type: "remote",
+        period: "March 2022 - November 2023",
+        description: "An E-commerce shopping platform",
+        job_role: [
+          {
+            role: "While at doncept, we Built a multi-vendor e-commerce Android and IOS mobile application",
+          },
+          {
+            role: "we implemented a complex interface for sorting and filtering products using different attributes",
+          },
+          {
+            role: "We integrated the mobile appliation with an external content management platform API",
+          },
+        ],
+      },
+      {
+        title: "Ebbys glow mobile app",
+        role_type: "remote",
+        period: "March 2022 - November 2023",
+        description: "An E-commerce shopping platform",
+        job_role: [
+          {
+            role: "We built a multi-vendor e-commerce Android and IOS mobile application",
+          },
+          {
+            role: "we implemented a complex interface for sorting and filtering products using different attributes",
+          },
+          {
+            role: "We integrated the mobile appliation with an external content management platform API",
+          },
+        ],
+      },
+      {
+        title: "Glacee waters website",
+        role_type: "remote",
+        period: "october 2022 - November 2023",
+        description: "An wordpress website for a water producing company",
+        job_role: [
+          {
+            role: "We built a standard company website a water producing company",
+          },
+        ],
+      },
+      {
         title: "Tobeetoe",
         role_type: "remote",
         period: "May 2017 - Jun 2018",
@@ -66,84 +147,6 @@ const ResumePageComp = () => {
           },
           {
             role: "Maintained and made adjustments to legacy codebase of clients",
-          },
-        ],
-      },
-      {
-        title: "Digages",
-        role_type: "remote",
-        period: "Feb 2022 - October 2022",
-
-        description: "All in one link page builder for business owners",
-        job_role: [
-          {
-            role: "Led and worked with a wonderful and hardworking team which led to rapid implementation of product core features and solution",
-          },
-          {
-            role: "Built user interface for easy and effective link building with mobile responsiveness",
-          },
-          {
-            role: "Built easy to use and mobile responsive dashboards",
-          },
-        ],
-      },
-      {
-        title: "Petmax mobile app",
-        role_type: "remote",
-        period: "January 2022 - November 2023",
-        description:
-          "An app for viewing downloading and sharing cute videos of pets",
-        job_role: [
-          {
-            role: "Built a complex user interfaces similar to Tiktok where I single handedly developed and deployed both an Android and an IOS apps on the app stores",
-          },
-          {
-            role: "Created a web app dashboard for uploading and managing videos",
-          },
-        ],
-      },
-      {
-        title: "Debbydot mobile app",
-        role_type: "remote",
-        period: "March 2022 - November 2023",
-        description: "An E-commerce shopping platform",
-        job_role: [
-          {
-            role: "Built an e-commerce mobile application for ordering products",
-          },
-          {
-            role: "created a complex interface for sorting and filtering products using different attributes",
-          },
-          {
-            role: "worked with and integrated wordpress and ecommerce API with the mobile app",
-          },
-        ],
-      },
-      {
-        title: "Ebbys glow mobile app",
-        role_type: "remote",
-        period: "March 2022 - November 2023",
-        description: "An E-commerce shopping platform",
-        job_role: [
-          {
-            role: "Built an e-commerce mobile application for ordering products",
-          },
-          {
-            role: "created a complex interface for sorting and filtering products using different attributes",
-          },
-          {
-            role: "worked with and integrated wordpress and ecommerce API with the mobile app",
-          },
-        ],
-      },
-      {
-        title: "Glacee waters website",
-        role_type: "remote",
-        period: "october 2022 - November 2023",
-        description: "An wordpress website for a water producing company",
-        job_role: [
-          {
-            role: "Built a standard company website a water producing company",
           },
         ],
       },
@@ -497,7 +500,7 @@ const ResumePageComp = () => {
                                 css={(theme) => ({
                                   fontSize: 14,
                                   fontWeight: 700,
-                                  textTransform: "capitalize",
+                                  // textTransform: "capitalize",
                                   color: theme.colors.Neutral_600,
                                   marginRight: 8,
                                 })}
@@ -509,7 +512,7 @@ const ResumePageComp = () => {
                               css={(theme) => ({
                                 fontSize: 14,
                                 fontWeight: 600,
-                                textTransform: "capitalize",
+                                // textTransform: "capitalize",
                                 color: theme.colors.Neutral_800,
                                 marginTop: 10,
                               })}
@@ -526,7 +529,7 @@ const ResumePageComp = () => {
                                   css={(theme) => ({
                                     fontSize: 14,
                                     fontWeight: 500,
-                                    textTransform: "capitalize",
+                                    // textTransform: "capitalize",
                                     color: theme.colors.Neutral_700,
                                     marginBottom: 10,
                                   })}
