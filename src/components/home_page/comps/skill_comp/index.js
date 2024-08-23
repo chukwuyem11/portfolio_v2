@@ -30,16 +30,21 @@ const SkillComp = (props) => {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
+            border: "1px solid #f4f4f4",
             //   margin: "0px 4px",
           })}
           key={props.logo}
         >
-          <AnimatePresence mode="wait">
+          <AnimatePresence initial={false}>
             {ishovered ? (
               <motion.img
-                initial={{ opacity: 0 }}
+                initial={{ opacity: 0, filter: ["blur(0.4px)", "none"] }}
                 animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
+                exit={{ opacity: 0, filter: ["blur(0.4px)"] }}
+                transition={{
+                  // ease: "easeInOut",
+                  duration: 0.6,
+                }}
                 css={mq({
                   width: [24, 24, 40],
                   height: [24, 24, 40],
@@ -48,9 +53,13 @@ const SkillComp = (props) => {
               />
             ) : (
               <motion.img
-                initial={{ opacity: 0 }}
+                initial={{ opacity: 0, filter: ["blur(0.4px)", "none"] }}
                 animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
+                exit={{ opacity: 0, filter: ["blur(0.4px)"] }}
+                transition={{
+                  // ease: "easeInOut",
+                  duration: 0.6,
+                }}
                 css={mq({
                   width: [24, 24, 40],
                   height: [24, 24, 40],
