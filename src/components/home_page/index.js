@@ -84,6 +84,59 @@ const HomePage = () => {
 
   const past_works = [
     {
+      title: "Favvii",
+      url: "https://favvii.com/",
+      logo: "favvii-logo.png",
+      bg: "#e8f7ff",
+      bg_hover: "#07344b",
+      width: "auto",
+      height: [50, 60, 60],
+      categories: ["all", "mobile applications"],
+      tools: [
+        {
+          title: "react",
+        },
+        {
+          title: "css",
+        },
+        {
+          title: "nextjs",
+        },
+        {
+          title: "capacitorjs",
+        },
+        {
+          title: "framer-motion",
+        },
+        {
+          title: "emotionjs",
+        },
+        {
+          title: "expressjs",
+        },
+        {
+          title: "nodejs",
+        },
+        {
+          title: "sequilize",
+        },
+      ],
+      description:
+        "Favvii is a mobile platform connecting students with restaurants, brands, services, and events.",
+      job_role: [
+        {
+          role: "Led a team of talented and interesting individuals accross various fields from graphic design to product design, marketing and engineering, together we built an Android and IOS mobile application for Favvii mobile app",
+        },
+        {
+          role: "With the small team we had to utilize the best technology for fast development and deployment, we utilized Capacitorjs and Nextjs for the development and deployment of both the Android and an IOS apps on the app stores, using web technologies",
+        },
+        {
+          role: "Worked with the team on the web dashboard for uploading and managing Vendor account",
+        },
+      ],
+      grid_position: "ltr",
+    },
+    {
       title: "Petmax",
       url: "https://petmaxapp.com/",
       logo: "petmax_logo.svg",
