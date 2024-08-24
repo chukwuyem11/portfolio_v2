@@ -935,7 +935,7 @@ const HomePage = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               css={mq({
-                fontSize: [32, 42, 62],
+                fontSize: [32, 42, 52],
                 fontWeight: 800,
                 textAlign: "center",
               })}
