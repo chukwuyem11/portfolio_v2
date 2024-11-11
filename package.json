@@ -11,12 +11,14 @@
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
+    "axios": "^1.7.7",
     "facepaint": "^1.2.1",
     "framer-motion": "^10.16.4",
     "motion": "^10.16.4",
     "next": "14.0.2",
     "react": "^18",
     "react-dom": "^18",
-    "react-to-print": "^2.14.15"
+    "react-to-print": "^2.14.15",
+    "swr": "^2.2.5"
   }
 }
