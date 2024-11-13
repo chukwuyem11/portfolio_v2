@@ -8,7 +8,7 @@ import { main_wp_url } from "@/src/details";
 
 const breakpoints = [576, 768, 1200];
 const mq = facepaint(breakpoints.map((bp) => `@media (min-width: ${bp}px)`));
-const EventComp = (props) => {
+const PostLoaderComp = () => {
   const [ishovered, setIshovered] = useState(false);
   const fetcher = (url) =>
     axios
@@ -51,35 +51,14 @@ const EventComp = (props) => {
                         
                           <motion.div
                           
-                            
+                          css={mq({
+                            width: [280,340,340],
+                            height:[240,300,300],
+                            borderRadius: 10,
+                             backgroundColor:"#fafafa"
+                          })}
                           >
-                            <motion.img
-                              initial={{
-                                opacity: 0,
-                                scale: 0.99,
-                                borderRadius: 10,
-                              }}
-                              animate={{
-                                opacity: 1,
-                                scale: 0.99,
-                              
-                              }}
-                              exit={{ opacity: 0, scale: 0.99 }}
-                              whileHover={{
-                              
-                                // scale: 1.01,
-                                borderRadius: 20,
-                              
-                              }}
-                              css={mq({
-                                width: [280,340,340],
-                                height:[240,300,300],
-                                borderRadius: 10,
-                                objectFit:"cover",
-                                objectPosition:"center center"
-                              })}
-                              src={`${props.featured_media}`}
-                            />
+                          
                           </motion.div>
                       
                       </div>
@@ -94,15 +73,16 @@ const EventComp = (props) => {
                           <div
                             css={(theme) =>
                               mq({
-                                width: "100%",
-                                fontSize: [20, 20, 24],
-                                fontWeight: 600,
-                                marginTop: [10, 10, 0],
-                                color: theme.colors.Neutral_800,
+                                height:30,
+                                borderRadius:30,
+                                     marginTop: 10,
+                                     width:"90%",
+                                     backgroundColor:"#fafafa"
+
                               })
                             }
                             // dangerouslySetInnerHTML={{__html: work.title.rendered}}
-                            dangerouslySetInnerHTML={{__html: props.title}}
+                           
                           >
                            
                           </div>
@@ -125,15 +105,14 @@ const EventComp = (props) => {
                         <div>
                           <div
                             css={(theme) => ({
-                              fontSize: 16,
-                                  fontWeight: 400,
-                                  // textTransform: "capitalize",
-                                  color: theme.colors.Neutral_700,
-                              marginTop: 10,
-                              width:"90%"
+                                height:30,
+                                borderRadius:30,
+                                     marginTop: 10,
+                                     width:"90%",
+                                     backgroundColor:"#fafafa"
                             })}
                             // dangerouslySetInnerHTML={{__html: work.content.rendered}}
-                            dangerouslySetInnerHTML={{__html: props.content}}
+                           
 
                           >
                            
@@ -174,39 +153,10 @@ const EventComp = (props) => {
                             </motion.div>
                           ))} */}
                         </div>
-
-                        <div>
-                        <motion.div
-                whileHover={{
-                  backgroundColor: "#000",
-                  color: "#fff",
-                }}
-                css={mq({
-                  height: [30, 30, 34],
-                  width:100,
-                  background: "#f4f4f4",
-                  borderRadius: 8,
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  margin: "0px 4px",
-                  textTransform: "capitalize",
-                  padding: "0px 8px",
-                  fontSize: [14, 14, 16],
-                  fontWeight: 500,
-                  cursor: "pointer",
-                  textDecoration: "none",
-                  color: "#000",
-                  marginBottom:16
-                })}
-                // onClick={() => router.push("/resume")}
-              >Read More.
-              </motion.div>
-                        </div>
                       </div>
                     </div>
     </div>
   );
 };
 
-export default EventComp;
+export default PostLoaderComp;
