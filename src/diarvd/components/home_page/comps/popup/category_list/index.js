@@ -178,11 +178,15 @@ const CategoryListComp = () => {
                         ))}
                         {category?.map((category_item, index) => (
                           <div  key={index} css={{
-                            display:"flex",
+                            display:
+                            category_item.name === "Uncategorized"
+                              ? "none"
+                              : "flex",
                             justifyContent:"center",
                             borderBottom:"1px solid #fafafa",
                             padding:"12px 0px",
                             cursor: "pointer",
+
                           }}>
                           <div
                          
@@ -257,20 +261,7 @@ const CategoryListComp = () => {
                               />
                             </div></div></div>
                         ))}
-                        <div>
-                          <div
-                            css={{
-                              width: 30,
-                              height: 30,
-                              backgroundColor: "#fff",
-                              borderRadius: "100%",
-                              display: "flex",
-                              justifyContent: "center",
-                              alignItems: "center",
-                              boxShadow: "4px 4px 5px 0px rgba(0,0,0,0.04)",
-                            }}
-                          ></div>
-                        </div>
+                        
                       </div>
                     </div>
                   )}

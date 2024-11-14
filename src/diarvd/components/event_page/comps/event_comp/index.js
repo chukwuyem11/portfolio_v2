@@ -8,7 +8,7 @@ import { main_wp_url } from "@/src/details";
 
 const breakpoints = [576, 768, 1200];
 const mq = facepaint(breakpoints.map((bp) => `@media (min-width: ${bp}px)`));
-const EventComp = (props) => {
+const EventPageComp = (props) => {
   const [ishovered, setIshovered] = useState(false);
   const fetcher = (url) =>
     axios
@@ -72,7 +72,7 @@ const EventComp = (props) => {
                               
                               }}
                               css={mq({
-                                width: [280,340,340],
+                                width: [280,380,400],
                                 height:[240,300,300],
                                 borderRadius: 10,
                                 objectFit:"cover",
@@ -130,7 +130,7 @@ const EventComp = (props) => {
                                   // textTransform: "capitalize",
                                   color: theme.colors.Neutral_700,
                               marginTop: 10,
-                              width:"90%"
+                              width:"70%"
                             })}
                             // dangerouslySetInnerHTML={{__html: work.content.rendered}}
                             dangerouslySetInnerHTML={{__html: props.content}}
@@ -176,7 +176,8 @@ const EventComp = (props) => {
                         </div>
 
                         <div>
-                        <motion.div
+                        <a  href={props.link} target="_blank">
+                        <motion.button
                 whileHover={{
                   backgroundColor: "#000",
                   color: "#fff",
@@ -199,9 +200,9 @@ const EventComp = (props) => {
                   color: "#000",
                   marginBottom:16
                 })}
-                onClick={() => props.eventpagefct()}
-              >Read More.
-              </motion.div>
+                // onClick={() => props.eventpagefct()}
+              >Get ticket
+              </motion.button></a>
                         </div>
                       </div>
                     </div>
@@ -209,4 +210,4 @@ const EventComp = (props) => {
   );
 };
 
-export default EventComp;
+export default EventPageComp;
