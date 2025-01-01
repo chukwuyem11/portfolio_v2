@@ -16,6 +16,7 @@ import { main_wp_url } from "@/src/details";
 import CategoryListComp from "../comps/popup/category_list";
 import { handleClientScriptLoad } from "next/script";
 import MusicListComp from "../../music_comps/music_list";
+import MusicLoaderComp from "../comps/loaders/music_loader";
 const breakpoints = [576, 768, 1200];
 const mq = facepaint(breakpoints.map((bp) => `@media (min-width: ${bp}px)`));
 const DivardMusicPage = () => {
@@ -76,24 +77,7 @@ const handleShowCategory = (value) =>{
         console.error("Error:", error);
       });
 
-  const {
-    data: events,
-    error: event_error,
-    isValidating,
-    isLoading: events_isloading,
-  } = useSWR(`${main_wp_url}/wp/v2/event`, fetcher);
-
-  // console.log(events);
-
-  const {
-    data: category,
-    error: category_error,
-    isLoading: category_isloading,
-  } = useSWR(`${main_wp_url}/wp/v2/categories`, fetcher);
-
-  // console.log(category);
-
-
+  
   const {
     data: music,
     error: music_error,
@@ -334,7 +318,31 @@ const handleShowCategory = (value) =>{
   <div css={{
     padding:16
   }}>
-    {music_isloading ? null : <div
+    {music_isloading ?   <div>
+                          <div
+                            css={(theme) =>
+                              mq({
+                                display: "grid",
+                                gridTemplateColumns: [
+                                  "repeat(1, 1fr)",
+                                  "repeat(1, 1fr)",
+                                  "repeat(2, 1fr)",
+                                ],
+                                width: ["100%", "100%", "90%"],
+                                padding: [0, "0px 16px", 0],
+                                rowGap: [20, 20, 40],
+                                columnGap: [20, 20, 40],
+                                marginBottom: 100,
+                              })
+                            }
+                          >
+                            {loaders.map((loader, index) => (
+                              <div key={index}>
+                                <MusicLoaderComp />
+                              </div>
+                            ))}
+                          </div>
+                        </div> : <div
                           css={(theme) =>
                             mq({
                               display: "grid",
