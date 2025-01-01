@@ -27,7 +27,15 @@ const CategoryLoaderComp = () => {
    
   return (
     <div>
-         <div
+         <motion.div
+         
+                            initial={{  backgroundColor:"#fafafa" }}
+                            animate={{ backgroundColor:["#fafafa", "#c4c4c4"] }}
+                            transition={{
+                              duration: 2,
+                              repeat: Infinity,
+                              repeatType: "reverse",
+                            }}
                             css={(theme) =>
                               mq({
                                 height:30,
@@ -42,7 +50,7 @@ const CategoryLoaderComp = () => {
                            
                           >
                            
-                          </div>
+                          </motion.div>
     </div>
   );
 };

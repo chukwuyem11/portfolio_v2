@@ -50,7 +50,13 @@ const PostLoaderComp = () => {
                       <div>
                         
                           <motion.div
-                          
+                            initial={{  backgroundColor:"#fafafa" }}
+                            animate={{ backgroundColor:["#fafafa", "#c4c4c4"] }}
+                            transition={{
+                              duration: 2,
+                              repeat: Infinity,
+                              repeatType: "reverse",
+                            }}
                           css={mq({
                             width: [280,340,340],
                             height:[240,300,300],
@@ -70,7 +76,14 @@ const PostLoaderComp = () => {
                         //   justifyContent: "left",
                         // }}
                         >
-                          <div
+                          <motion.div
+                          initial={{  backgroundColor:"#fafafa" }}
+                          animate={{ backgroundColor:["#fafafa", "#c4c4c4"] }}
+                          transition={{
+                            duration: 2,
+                            repeat: Infinity,
+                            repeatType: "reverse",
+                          }}
                             css={(theme) =>
                               mq({
                                 height:30,
@@ -85,7 +98,7 @@ const PostLoaderComp = () => {
                            
                           >
                            
-                          </div>
+                          </motion.div>
                           {/* <div
                             css={{
                               marginTop: 8,
@@ -103,7 +116,14 @@ const PostLoaderComp = () => {
                           </div> */}
                         </div>
                         <div>
-                          <div
+                          <motion.div
+                          initial={{  backgroundColor:"#fafafa" }}
+                          animate={{ backgroundColor:["#fafafa", "#c4c4c4"] }}
+                          transition={{
+                            duration: 2,
+                            repeat: Infinity,
+                            repeatType: "reverse",
+                          }}
                             css={(theme) => ({
                                 height:30,
                                 borderRadius:30,
@@ -116,7 +136,7 @@ const PostLoaderComp = () => {
 
                           >
                            
-                          </div>
+                          </motion.div>
                          
                         </div>
                       

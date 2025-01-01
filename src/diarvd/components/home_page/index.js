@@ -29,7 +29,40 @@ const handleShowCategory = (value) =>{
 
   const router = useRouter();
 
+  function parseDateTime(dateTimeStr) {
+    const date = new Date(dateTimeStr);
+
+    const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   
+    const day = days[date.getDay()];
+
+    // Add ordinal suffix for date
+    const dateNum = date.getDate();
+    const ordinalSuffix = (dateNum) => {
+        const suffixes = ["th", "st", "nd", "rd"];
+        const value = dateNum % 100;
+        return suffixes[(value - 20) % 10] || suffixes[value] || suffixes[0];
+    };
+    const formattedDate = `${day}, ${dateNum}${ordinalSuffix(dateNum)}`;
+
+    // Convert to 12-hour format
+    let hours = date.getHours();
+    const minutes = date.getMinutes();
+    const ampm = hours >= 12 ? 'pm' : 'am';
+    hours = hours % 12 || 12; // Converts 0 to 12
+    const time = `${hours}${minutes ? `:${minutes < 10 ? '0' + minutes : minutes}` : ''}${ampm}`;
+  
+    const month = months[date.getMonth()];
+    const year = date.getFullYear();
+
+    return {
+        dayAndDate: formattedDate,
+        time: time,
+        month: month,
+        year: year
+    };
+}
 
   const loaders = ["", "", "", "", ""];
   const fetcher = (url) =>
@@ -291,7 +324,7 @@ duration:0.8
                             })
                           }
                         >
-                          {events?.map((work, index) => (
+                          {events?.filter(event => event?.acf.is_private === false)?.map((work, index) => (
                             <div key={index}>
                               <EventComp
                                 featured_media={
@@ -302,6 +335,9 @@ duration:0.8
                                 media_id={work.featured_media}
                                 title={work.title.rendered}
                                 content={work.content.rendered}
+                                date={parseDateTime(work?.acf.date_time).dayAndDate}
+                                month={parseDateTime(work?.acf.date_time).month}
+                                year={parseDateTime(work?.acf.date_time).year}
                               />
                             </div>
                           ))}

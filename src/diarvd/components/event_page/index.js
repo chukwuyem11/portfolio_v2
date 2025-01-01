@@ -20,9 +20,6 @@ const DivardEventPage = () => {
   const [selected, setSelected] = useState("all");
   const [show_category_popup, setshow_category_popup] = useState(false);
 
-const handleShowCategory = (value) =>{
-  setshow_category_popup(value)
-}
 
   const router = useRouter();
 
@@ -285,10 +282,16 @@ cursor:"pointer"
                                 title={events?.title.rendered}
                                 content={events?.content.rendered}
                                 link={events?.acf.ticket_link}
+                                external_link={events?.acf.link_external}
+                                bank_name={events?.acf.bank_name}
+                                bank_number={events?.acf.account_number}
+                                confirm_payment={events?.acf.confirm_transfer}
+                                
                               />
                             </div>
                             <div css={mq({
-                                display:["block", "none", "none"]
+                                display:["block", "none", "none"],
+                                padding:["0px 16px","0px 16px",0]
                             })}>
 
 <div
@@ -315,8 +318,21 @@ cursor:"pointer"
                     // textTransform: "capitalize",
                     color: theme.colors.Neutral_700,
               
-              })}>Date & Time</div>
-              <div>{parseDateTime(events?.acf.date_time).day}, {parseDateTime(events?.acf.date_time).time}, {parseDateTime(events?.acf.date_time).month}, {parseDateTime(events?.acf.date_time).year}</div>
+              })}>Date </div>
+              <div>{parseDateTime(events?.acf.date_time).dayAndDate}, {parseDateTime(events?.acf.date_time).month}, {parseDateTime(events?.acf.date_time).year}</div>
+              
+              </div>
+              <div css={{
+                padding:"10px 0px",
+               
+               }}><div  css={(theme) => ({
+                fontSize: 16,
+                    fontWeight: 400,
+                    // textTransform: "capitalize",
+                    color: theme.colors.Neutral_700,
+              
+              })}>Time</div>
+              <div>{parseDateTime(events?.acf.date_time).time}</div>
               </div>
               <div css={{
                 padding:"10px 0px",
@@ -458,7 +474,7 @@ display:["none", "block", "block"],
                     // textTransform: "capitalize",
                     color: theme.colors.Neutral_700,
               
-              })}>Phone number</div><div>{events.acf.phone_number}</div></div>
+              })}>Phone number</div><div>{events?.acf.phone_number}</div></div>
                <div css={{
                   padding:"10px 16px",
                 borderBottom:"1px solid #fafafa",
@@ -468,7 +484,7 @@ display:["none", "block", "block"],
                     // textTransform: "capitalize",
                     color: theme.colors.Neutral_700,
                 
-              })}>Organiser</div><div>{events.acf.publisher}</div></div>
+              })}>Organiser</div><div>{events?.acf.publisher}</div></div>
                <div css={{
                  padding:"10px 16px",
                 borderBottom:"1px solid #fafafa",
@@ -478,7 +494,7 @@ display:["none", "block", "block"],
                     // textTransform: "capitalize",
                     color: theme.colors.Neutral_700,
                
-              })}>Email</div><div>{events.acf.email}</div></div>
+              })}>Email</div><div>{events?.acf.email}</div></div>
               </div>}
               </div>
             </div>
@@ -488,7 +504,7 @@ display:["none", "block", "block"],
       
 
 
-
+    
   
     </div>
   );

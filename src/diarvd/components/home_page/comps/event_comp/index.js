@@ -81,7 +81,24 @@ const EventComp = (props) => {
                               src={`${props.featured_media}`}
                             />
                           </motion.div>
-                      
+                      <div>
+                      <div
+                            css={(theme) =>
+                              mq({
+                                width: "100%",
+                                fontSize: [14, 14, 14],
+                                fontWeight: 400,
+                                marginTop: [0, 0, 0],
+                                color: theme.colors.Neutral_600,
+                              })
+                            }
+                            // dangerouslySetInnerHTML={{__html: work.title.rendered}}
+                          
+                          >
+                         {props.date} {props.month} {props.year}
+                          </div>
+                          
+                      </div>
                       </div>
 
                       <div>
