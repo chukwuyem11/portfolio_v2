@@ -7,20 +7,18 @@ import {
   color,
 } from "framer-motion";
 import React, { useState, useContext } from "react";
-import SkillComp from "./comps/skill_comp";
+
 import { useRouter } from "next/router";
 import axios from "axios";
 import useSWR, { useSWRConfig, mutate } from "swr";
 import { main_wp_url } from "@/src/details";
-import EventComp from "./comps/event_comp";
-import PostLoaderComp from "./comps/loaders/post_loader";
-import CategoryLoaderComp from "./comps/loaders/category_loader";
-import CategoryListComp from "./comps/popup/category_list";
+
+import CategoryListComp from "../comps/popup/category_list";
 import { handleClientScriptLoad } from "next/script";
-import MusicListComp from "../music_comps/music_list";
+import MusicListComp from "../../music_comps/music_list";
 const breakpoints = [576, 768, 1200];
 const mq = facepaint(breakpoints.map((bp) => `@media (min-width: ${bp}px)`));
-const DivardHomePage = () => {
+const DivardMusicPage = () => {
   const [selected, setSelected] = useState("all");
   const [show_category_popup, setshow_category_popup] = useState(false);
 
@@ -138,84 +136,20 @@ const handleShowCategory = (value) =>{
                 alignItems: "center",
               }}
             >
-              <div
-                css={mq({
-                  width: "100%",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "space-between",
-                  marginTop: 54,
-                
-                })}
-              >
-                <div css={{
-                  display:"flex",
-                  alignItems:"end"
-                }}>
-                  <motion.img
-                    initial={{
-                      opacity: 0,
-                      scale: 1,
-                    }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    whileHover={{
-                      scale: 0.9,
-                    }}
-                    transition={{
-                      // ease: "easeInOut",
-                      duration: 0.6,
-                    }}
-                    css={mq({
-                      marginTop: 24,
-
-                      objectFit: "cover",
-                      objectPosition: "center",
-
-                      width: [30, 40, 40],
-                      height: [30, 40, 40],
-
-                      // transform: "scale(1.9)",
-                    })}
-                    src="/divard/divard_logo.png"
-                  />
-                  <motion.div  initial={{
-                      opacity: 0,
-                     
-                    }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    whileHover={{
-                     color:"#c4c4c4",
-                      opacity:1,
-                      transition:{
-duration:0.8
-                      }
-                    }}
-                    transition={{
-                      // ease: "easeInOut",
-                      duration: 1,
-                    }}  css={(theme) =>
-                              mq({
-                                width: "100%",
-                                fontSize: [20, 20, 24],
-                                fontWeight: 600,
-                            
-                                color: theme.colors.Neutral_800,
-                                marginLeft:4,
-                              })
-                            }>
-                  ivard!
-                  </motion.div>
-                </div>
- <div css={{
+           <div
+                          css={mq({
+                            width: "100%",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "space-between",
+                            marginTop: 54,
+                          
+                          })}
+                        >
+                          <div css={{
                             display:"flex",
-                            alignItems:"center",
-                            marginTop:24,
-                            cursor: "pointer",
-                          }}
-                          onClick={() => router.push("/music")}
-                          >
+                            alignItems:"end"
+                          }}>
                             <motion.img
                               initial={{
                                 opacity: 0,
@@ -231,34 +165,99 @@ duration:0.8
                                 duration: 0.6,
                               }}
                               css={mq({
-                                // marginTop: 30,
+                                marginTop: 24,
           
                                 objectFit: "cover",
                                 objectPosition: "center",
           
-                                width: [10, 20, 30],
-                                          height: [10, 20, 30],
+                                width: [30, 40, 40],
+                                height: [30, 40, 40],
+          
                                 // transform: "scale(1.9)",
                               })}
-                              src="/divard/svg/home/switch.svg"
+                              src="/divard/divard_logo.png"
                             />
-          <div css={(theme) =>
-                              mq({
+                            <motion.div  initial={{
+                                opacity: 0,
                                
-                                fontSize: [20, 20, 24],
-                                fontWeight: 600,
-                            
-                                color: theme.colors.Neutral_800,
-                               
-                              })
-                            }
-                            
-                           
-                            
-                            >
-            Music
-          </div></div>
-              </div>
+                              }}
+                              animate={{ opacity: 1 }}
+                              exit={{ opacity: 0 }}
+                              whileHover={{
+                               color:"#c4c4c4",
+                                opacity:1,
+                                transition:{
+          duration:0.8
+                                }
+                              }}
+                              transition={{
+                                // ease: "easeInOut",
+                                duration: 1,
+                              }}  css={(theme) =>
+                                        mq({
+                                          width: "100%",
+                                          fontSize: [20, 20, 24],
+                                          fontWeight: 600,
+                                      
+                                          color: theme.colors.Neutral_800,
+                                          marginLeft:4,
+                                        })
+                                      }>
+                            ivard!
+                            </motion.div>
+                          </div>
+          <div css={{
+                                      display:"flex",
+                                      alignItems:"center",
+                                      marginTop:24,
+                                      cursor: "pointer",
+                                    }}
+                                    onClick={() => router.push("/")}
+                                    >
+                                      <motion.img
+                                        initial={{
+                                          opacity: 0,
+                                          scale: 1,
+                                        }}
+                                        animate={{ opacity: 1 }}
+                                        exit={{ opacity: 0 }}
+                                        whileHover={{
+                                          scale: 0.9,
+                                        }}
+                                        transition={{
+                                          // ease: "easeInOut",
+                                          duration: 0.6,
+                                        }}
+                                        css={mq({
+                                          // marginTop: 30,
+                    
+                                          objectFit: "cover",
+                                          objectPosition: "center",
+                    
+                                          width: [10, 20, 30],
+                                          height: [10, 20, 30],
+                    
+                                          // transform: "scale(1.9)",
+                                        })}
+                                        src="/divard/svg/home/switch.svg"
+                                      />
+                    <div css={(theme) =>
+                                        mq({
+                                         
+                                          fontSize: [20, 20, 24],
+                                          fontWeight: 600,
+                                      
+                                          color: theme.colors.Neutral_800,
+                                         
+                                        })
+                                      }
+                                      
+                                     
+                                      
+                                      >
+                      Events
+                    </div></div>
+                        </div>
             </div>
           </div>
           <div
@@ -332,10 +331,38 @@ duration:0.8
                  <div>
                   <div>
 
- 
+  <div css={{
+    padding:16
+  }}>
+    {music_isloading ? null : <div
+                          css={(theme) =>
+                            mq({
+                              display: "grid",
+                              gridTemplateColumns: [
+                                "repeat(1, 1fr)",
+                                "repeat(1, 1fr)",
+                                "repeat(2, 1fr)",
+                              ],
+                              width: ["100%", "100%", "90%"],
+                              padding: [0, "0px 16px", 0],
+                              rowGap: [20, 20, 20],
+                              columnGap: [20, 20, 40],
+                              marginBottom: 100,
+                            })
+                          }
+                        >{music?.map((music_item) => (<div><MusicListComp
+     featured_media={
+      music_item?.better_featured_image?.media_details?.sizes
+        .large.source_url
+    }
+    title={music_item?.acf.name}
+    artists={music_item?.acf.artists}
+    media_link={music_item?.acf.audio_file}
+    /></div>))}</div>}
+  </div>
 </div>
                  </div>
-                  <div>
+                  {/* <div>
                     <div
                       css={{
                         display: "flex",
@@ -407,7 +434,7 @@ duration:0.8
                         </div>
                       )}
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
               <div
@@ -588,4 +615,4 @@ display:["none", "block", "block"],
   );
 };
 
-export default DivardHomePage;
+export default DivardMusicPage;
