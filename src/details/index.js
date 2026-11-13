@@ -1,0 +1,1 @@
+export const main_wp_url = "https://wp.chukwuyem.com/wp-json"
