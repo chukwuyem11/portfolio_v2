@@ -1,20 +1,20 @@
+
 /** @jsxImportSource @emotion/react */
+import React, { useState } from "react";
+import { css } from "@emotion/react";
 import facepaint from "facepaint";
-import {
-  motion,
-  AnimatePresence,
-  AnimateSharedLayout,
-  color,
-} from "framer-motion";
-import React, { useState, useContext } from "react";
-import SkillComp from "./comps/skill_comp";
+import { motion, AnimatePresence } from "framer-motion";
 import { useRouter } from "next/router";
+import SkillComp from "./comps/skill_comp";
 
 const breakpoints = [576, 768, 1200];
-const mq = facepaint(breakpoints.map((bp) => `@media (min-width: ${bp}px)`));
+const mq = facepaint(
+  breakpoints.map((bp) => `@media (min-width: ${bp}px)`)
+);
+
 const HomePage = () => {
-  const [selected, setSelected] = useState("all");
   const router = useRouter();
+  const [selected, setSelected] = useState("all");
 
   const social_links = [
     {
@@ -23,7 +23,7 @@ const HomePage = () => {
       link: "mailto:eboigbodinchukwuyem@gmail.com",
     },
     {
-      title: "linkedn",
+      title: "linkedin",
       image: "lindn.svg",
       link: "https://ng.linkedin.com/in/chukwuyem-eboigbodin-37b245217",
     },
@@ -35,61 +35,17 @@ const HomePage = () => {
   ];
 
   const skill_list = [
-    {
-      logo: "js_box.svg",
-      active_color: "coloured_js.svg",
-      title: "Javascript",
-    },
-    {
-      logo: "reactjs.svg",
-      active_color: "reactjs_cl.svg",
-      title: "React js",
-    },
-    {
-      logo: "framer_motion.svg",
-      active_color: "framer_motion_cl.svg",
-      title: "Framer Motion",
-    },
-    {
-      logo: "capacitorjs.svg",
-      active_color: "capacitorjs_cl.svg",
-      title: "Capacitor js",
-    },
-    {
-      logo: "nextjs.svg",
-      active_color: "nextjs_cl.svg",
-      title: "Next js",
-    },
-    {
-      logo: "wordpress.svg",
-      active_color: "wordpress_cl.svg",
-      title: "Wordpress",
-    },
-    {
-      logo: "nodejs.svg",
-      active_color: "nodejs_cl.svg",
-      title: "Node js",
-    },
-    {
-      logo: "typescript.svg",
-      active_color: "typescript_cl.svg",
-      title: "Typescript",
-    },
-    {
-      logo: "expressjs.svg",
-      active_color: "expressjs.svg",
-      title: "Express js",
-    },
-    {
-      logo: "figma.svg",
-      active_color: "figma_cl.svg",
-      title: "Figma",
-    },
-    {
-      logo: "tailwind.svg",
-      active_color: "tailwind_cl.svg",
-      title: "Tailwind",
-    },
+    ["js_box.svg", "coloured_js.svg", "Javascript"],
+    ["reactjs.svg", "reactjs_cl.svg", "React js"],
+    ["framer_motion.svg", "framer_motion_cl.svg", "Framer Motion"],
+    ["capacitorjs.svg", "capacitorjs_cl.svg", "Capacitor js"],
+    ["nextjs.svg", "nextjs_cl.svg", "Next js"],
+    ["wordpress.svg", "wordpress_cl.svg", "Wordpress"],
+    ["nodejs.svg", "nodejs_cl.svg", "Node js"],
+    ["typescript.svg", "typescript_cl.svg", "Typescript"],
+    ["expressjs.svg", "expressjs.svg", "Express js"],
+    ["figma.svg", "figma_cl.svg", "Figma"],
+    ["tailwind.svg", "tailwind_cl.svg", "Tailwind"],
   ];
 
   const past_works = [
@@ -97,30 +53,15 @@ const HomePage = () => {
       title: "Federal Ministry Of Labour And Employment, Nigeria",
       url: "https://portal.osh.gov.ng/",
       logo: "osh_nigeria.svg",
-      bg: "#1d8d72",
+       bg: "#1d8d72",
       bg_hover: "#1a7d65",
       categories: ["all", "web applications"],
-      width: [140, 160, 180],
-      height: "auto",
-      tools: [
-        {
-          title: "reactjs",
-        },
-        {
-          title: "nextjs",
-        },
-        {
-          title: "emotionjs",
-        },
-      ],
       description:
-        "A web application managing the processes of the Federal Ministry Of Labour And Employment",
+        "A web application managing the processes of the Federal Ministry Of Labour And Employment.",
       job_role: [
-        {
-          role: "Collaborated with a team of 5 developers to build a large-scale government web platform with over 5 web application that are all linked together for registration and accident management of Factories in Nigeria.",
-        },
+        "Collaborated with a team of 5 developers to build a large-scale government web platform with over 5 interconnected web applications for registration and accident management of factories in Nigeria.",
       ],
-      grid_position: "rtr",
+      tools: ["React", "Next.js", "Emotion.js"],
     },
     {
       title: "Maxbox",
@@ -128,947 +69,919 @@ const HomePage = () => {
       logo: "maxbox_logo.svg",
       bg: "#111",
       bg_hover: "#000",
-      width: "auto",
-      height: [40, 40, 150],
       categories: ["all", "mobile applications"],
-      tools: [
-        {
-          title: "react",
-        },
-        {
-          title: "css",
-        },
-        {
-          title: "nextjs",
-        },
-        {
-          title: "capacitorjs",
-        },
-        {
-          title: "framer-motion",
-        },
-        {
-          title: "emotionjs",
-        },
-        {
-          title: "expressjs",
-        },
-        {
-          title: "nodejs",
-        },
-        {
-          title: "sequilize",
-        },
-      ],
-      description:
-        "A movie streaming mobile app",
+      description: "A movie streaming mobile application.",
       job_role: [
-        {
-          role: "Built an interactive mobile movie streaming application with features for saving and downloading media from social platforms.",
-        },
-        
-        {
-          role: "Worked with on the web dashboard for uploading and managing Petmax Movies and Movie categories",
-        },
-          {
-          role: "The complex mobile app was built on web technologies including Nextjs, Emotionjs and Framer motion, and utilizing Capacitor to wrap the web app and compiling it into an android and IOS mobile App",
-        },
+        "Built an interactive mobile movie streaming application with features for saving and downloading media from social platforms.",
+        "Worked on the web dashboard for uploading and managing Petmax movies and movie categories.",
+        "Built the application using Next.js, Emotion, Framer Motion and Capacitor, compiling it into Android and iOS applications.",
       ],
-      grid_position: "ltr",
+      tools: [
+        "React",
+        "CSS",
+        "Next.js",
+        "Capacitor",
+        "Framer Motion",
+        "Emotion",
+        "Express",
+        "Node.js",
+        "Sequelize",
+      ],
     },
-    
     {
       title: "Favvii",
       url: "https://play.google.com/store/apps/details?id=com.favvii",
       logo: "favvii-logo.png",
-      bg: "#e8f7ff",
+        bg: "#e8f7ff",
       bg_hover: "#07344b",
-      width: "auto",
-      height: [50, 60, 60],
       categories: ["all", "mobile applications"],
-      tools: [
-        {
-          title: "react",
-        },
-        {
-          title: "css",
-        },
-        {
-          title: "nextjs",
-        },
-        {
-          title: "capacitorjs",
-        },
-        {
-          title: "framer-motion",
-        },
-        {
-          title: "emotionjs",
-        },
-        {
-          title: "expressjs",
-        },
-        {
-          title: "nodejs",
-        },
-        {
-          title: "sequilize",
-        },
-      ],
       description:
         "Favvii is a mobile platform connecting students with restaurants, brands, services, and events.",
       job_role: [
-        {
-          role: "Led a team of designers, marketers, and engineers to build the Favvii Android and iOS mobile application.",
-        },
-       
-        {
-          role: "Worked with the team on the web dashboard for uploading and managing Vendor account",
-        },
+        "Led a team of designers, marketers, and engineers to build the Favvii Android and iOS mobile application.",
+        "Worked with the team on the web dashboard for uploading and managing vendor accounts.",
       ],
-      grid_position: "ltr",
+      tools: [
+        "React",
+        "CSS",
+        "Next.js",
+        "Capacitor",
+        "Framer Motion",
+        "Emotion",
+        "Express",
+        "Node.js",
+        "Sequelize",
+      ],
     },
-
-    // {
-    //   title: "Debby Dot",
-    //   url: "https://debbydotattractions.com/",
-    //   logo: "debby_dot.png",
-    //   bg: "#fef5e6",
-    //   bg_hover: "#fce2b5",
-    //   categories: ["all", "mobile applications"],
-    //   width: "auto",
-    //   height: [40, 40, 30],
-    //   tools: [
-    //     {
-    //       title: "react",
-    //     },
-    //     {
-    //       title: "css",
-    //     },
-    //     {
-    //       title: "nextjs",
-    //     },
-    //     {
-    //       title: "capacitorjs",
-    //     },
-    //     {
-    //       title: "framer-motion",
-    //     },
-    //     {
-    //       title: "emotionjs",
-    //     },
-    //     {
-    //       title: "expressjs",
-    //     },
-    //     {
-    //       title: "nodejs",
-    //     },
-    //     {
-    //       title: "sequilize",
-    //     },
-    //   ],
-    //   description: "An E-commerce shopping platform",
-    //   job_role: [
-    //     {
-    //       role: "While at doncept, we Built a multi-vendor e-commerce Android and IOS mobile application",
-    //     },
-    //     {
-    //       role: "we implemented a complex interface for sorting and filtering products using different attributes",
-    //     },
-    //     {
-    //       role: "We integrated the mobile appliation with an external content management platform API",
-    //     },
-    //   ],
-    //   grid_position: "ltr",
-    // },
-    // {
-    //   title: "Ebby Skincare",
-    //   url: "https://ebbysglowskincare.com/",
-    //   logo: "ebbys_glow.png",
-    //   bg: "#fde9f3",
-    //   bg_hover: "#f9bddd",
-    //   categories: ["all", "mobile applications"],
-    //   width: "auto",
-    //   height: [40, 40, 30],
-    //   tools: [
-    //     {
-    //       title: "react",
-    //     },
-    //     {
-    //       title: "css",
-    //     },
-    //     {
-    //       title: "nextjs",
-    //     },
-    //     {
-    //       title: "capacitorjs",
-    //     },
-    //     {
-    //       title: "framer-motion",
-    //     },
-    //     {
-    //       title: "emotionjs",
-    //     },
-    //     {
-    //       title: "expressjs",
-    //     },
-    //     {
-    //       title: "nodejs",
-    //     },
-    //     {
-    //       title: "sequilize",
-    //     },
-    //   ],
-    //   description: "An E-commerce shopping platform",
-    //   job_role: [
-    //     {
-    //       role: "We built a multi-vendor e-commerce Android and IOS mobile application",
-    //     },
-    //     {
-    //       role: "we implemented a complex interface for sorting and filtering products using different attributes",
-    //     },
-    //     {
-    //       role: "We integrated the mobile appliation with an external content management platform API",
-    //     },
-    //   ],
-    //   grid_position: "rtr",
-    // },
     {
-      title: "Glacee waters",
+      title: "Glacee Waters",
       url: "https://glaceewater.com/",
       logo: "glacee_logo.png",
-      bg: "#e6f6f9",
+     bg: "#e6f6f9",
       bg_hover: "#b6e5ed",
       categories: ["all", "web applications"],
-      width: [90, 90, 90],
-      height: "auto",
-      tools: [
-        {
-          title: "wordpress",
-        },
-        {
-          title: "elementor",
-        },
-      ],
-      description: "A wordpress website for a water producing company",
+      description:
+        "A WordPress website for a water-producing company.",
       job_role: [
-        {
-          role: "We built a standard company website a water producing company",
-        },
+        "Worked on building a company website for a water-producing business.",
       ],
-      grid_position: "rtr",
+      tools: ["WordPress", "Elementor"],
     },
   ];
 
   const categories = [
-    {
-      title: "all",
-    },
-    {
-      title: "mobile applications",
-    },
-    {
-      title: "web applications",
-    },
+    { title: "all" },
+    { title: "mobile applications" },
+    { title: "web applications" },
   ];
+
+  const sectionTitle = {
+    fontWeight: 800,
+    letterSpacing: "-2px",
+    margin: 0,
+  };
+
+  const socialButton = {
+    width: 42,
+    height: 42,
+    borderRadius: 12,
+    background: "#f0f0ec",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    transition: "all .25s",
+    ":hover": {
+      background: "#e0e0d9",
+      transform: "translateY(-4px)",
+    },
+  };
+
   return (
-    <div>
+    <div
+      css={{
+        background: "#fafaf8",
+        color: "#171717",
+        minHeight: "100vh",
+        overflow: "hidden",
+        fontFamily: "inherit",
+      }}
+    >
       <div
         css={{
-          // backgroundColor: "#F4F4F4",
-          background: "linear-gradient(to bottom, #F4F4F4, #FAFAFA)",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          overflow: "hidden",
-          height: "100vh",
+          width: "100%",
+          maxWidth: 1200,
+          margin: "0 auto",
+          padding: "0px 24px",
+          boxSizing: "border-box",
         }}
       >
-        <div
-          css={mq({
-            width: ["90%", "70%", "60%"],
-            backgroundColor: "#fff",
-            boxShadow: "0 4px 6px rgba(0, 0, 0, 0.01)",
-            borderRadius: 20,
-            // padding: "30px 0px",
-            overflowY: "scroll",
-            overflowX: "hidden",
-            height: "90vh",
-            "::-webkit-scrollbar": {
-              width: "12px", // Width of the scrollbar
-            },
-            "::-webkit-scrollbar-track": {
-              background: "#f1f1f1", // Background of the scrollbar track
-              borderRadius: "10px", // Rounded corners
-            },
-            "::-webkit-scrollbar-thumb": {
-              backgroundColor: "#888", // Color of the scrollbar thumb
-              borderRadius: "10px", // Rounded corners
-              border: "3px solid #f1f1f1", // Adds padding around the thumb
-            },
-            "::-webkit-scrollbar-thumb:hover": {
-              backgroundColor: "#555", // Darker color when hovering
-            },
-            scrollbarColor: "#888 #f1f1f1", // For Firefox: thumb color, track color
-            scrollbarWidth: "thin", // For Firefox: makes the scrollbar thinner
-          })}
+        {/* NAVIGATION */}
+
+        <motion.header
+          initial={{ opacity: 0, y: -15 }}
+          animate={{ opacity: 1, y: 0 }}
+          css={{
+            height: 85,
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            borderBottom: "1px solid #eaeae6",
+          }}
         >
-          {/* <div
-            css={{
-              display: "flex",
-              justifyContent: "center",
-              width: "100%",
-            }}
-          >
-            <div
-              css={mq({
-                marginTop: 40,
-                width: ["100%", "100%", "80%"],
-                padding: ["0px 16px", "0px 16px", 0],
-                display: "flex",
-                justifyContent: "space-between",
-              })}
-            >
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                css={mq({
-                  fontSize: [20, 20, 32],
-                  fontWeight: 800,
-                  textAlign: "center",
-                  fontFamily: "Pacifico",
-                })}
-              >
-                Eboigbodin
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                css={mq({
-                  fontSize: [20, 20, 32],
-                  fontWeight: 800,
-                  textAlign: "center",
-                  fontFamily: "Pacifico",
-                })}
-              >
-                Chukwuyem
-              
-              </motion.div>
-            </div>
-          </div> */}
           <div
             css={{
-              display: "flex",
-              justifyContent: "center",
+              fontSize: 24,
+              fontWeight: 900,
+              letterSpacing: "-2px",
             }}
           >
-            <motion.img
-              initial={{
-                opacity: 0,
-                borderRadius: 20,
-
-                scale: 1,
-              }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              whileHover={{
-                backgroundColor: "#eee",
-
-                borderRadius: 30,
-              }}
-              transition={{
-                // ease: "easeInOut",
-                duration: 0.6,
-              }}
-              css={mq({
-                marginTop: 40,
-                backgroundColor: "#fff",
-                objectFit: "cover",
-                objectPosition: "center",
-                borderRadius: 20,
-                width: [140, 140, 250],
-                height: [140, 140, 250],
-
-                // transform: "scale(1.9)",
-              })}
-              src="/home/personal_image.webp"
-            />
+            EC<span css={{ color: "#99998e" }}>.</span>
           </div>
 
-          <div
-            css={{
+          <nav
+            css={mq({
               display: "flex",
-              justifyContent: "center",
-              marginTop: 20,
-            }}
+              alignItems: "center",
+              gap: [12, 20, 32],
+            })}
           >
-            {social_links.map((link) => (
-              <a key={link.title} href={link.link} target="_blank">
-                <motion.div
-                  whileHover={{
-                    backgroundColor: "#eee",
-                  }}
-                  css={mq({
-                    width: [24, 24, 34],
-                    height: [24, 24, 34],
-                    background: "#fff",
-                    borderRadius: "100%",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    margin: "0px 4px",
-                  })}
-                >
-                  <img
-                    css={mq({
-                      width: [18, 18, 24],
-                      height: [18, 18, 24],
-                    })}
-                    src={`home/tabs/${link.image}`}
-                  />
-                </motion.div>
+            {["About", "Skills", "Projects"].map((item) => (
+              <a
+                key={item}
+                href={`#${item.toLowerCase()}`}
+                css={{
+                  color: "#777",
+                  fontSize: 13,
+                  fontWeight: 600,
+                  textDecoration: "none",
+                  transition: "color .2s",
+                  ":hover": { color: "#111" },
+                }}
+              >
+                {item}
               </a>
             ))}
 
-            {/* <motion.div
-            whileHover={{
-              backgroundColor: "#000",
-              color: "#fff",
-            }}
-            css={mq({
-              height: [24, 24, 34],
-              background: "#fff",
-              borderRadius: 30,
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              margin: "0px 4px",
-              textTransform: "capitalize",
-              padding: "0px 8px",
-              fontSize: [14, 14, 16],
-              fontWeight: 500,
-              cursor: "pointer",
-            })}
-            onClick={() => router.push("/resume")}
-          >
-            my resume
-          </motion.div> */}
-            <motion.a
-              // href="mailto:eboigbodinchukwuyem@gmail.com"
-              // target="_blank"
+            <a
+              href="mailto:eboigbodinchukwuyem@gmail.com"
               css={{
-                textDecoration: "none",
-                color: "#000",
-              }}
-              whileHover={{
+                background: "#171717",
                 color: "#fff",
-              }}
-            >
-              <motion.div
-                whileHover={{
-                  backgroundColor: "#000",
-                  color: "#fff",
-                }}
-                css={mq({
-                  height: [24, 24, 34],
-                  background: "#f4f4f4",
-                  borderRadius: 30,
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  margin: "0px 4px",
-                  textTransform: "capitalize",
-                  padding: "0px 8px",
-                  fontSize: [14, 14, 16],
-                  fontWeight: 500,
-                  cursor: "pointer",
-                  textDecoration: "none",
-                  color: "#000",
-                })}
-                onClick={() => router.push("/resume")}
-              >
-                My Resume
-              </motion.div>{" "}
-            </motion.a>
-          </div>
-
-          <div
-            css={{
-              display: "flex",
-              justifyContent: "center",
-            }}
-          >
-            <div
-              css={mq({
-                textAlign: "center",
-                fontSize: [20, 20, 22],
-                width: ["100%", "100%", "70%"],
-                marginTop: 20,
-                padding: ["0px 16px", "0px 16px", 0],
-              })}
-            >
-              <p>
-                {" "}
-                👋 Hello, I'm{" "}
-                <strong
-                  css={{
-                    // fontFamily: "Pacifico",
-                    color: "#111",
-                  }}
-                >
-                  Eboigbodin Chukwuyem
-                </strong>
-                , a passionate{" "}
-                <strong>Software Engineer and Design Engineer</strong> with
-                over six years of experience building modern web and mobile
-                applications.
-              </p>{" "}
-              Specialized in turning product ideas and design concepts into 
-              <strong>{" "}high-fidelity, interactive experiences</strong>, working
-              closely with designers to transform mockups into real, functional
-              prototypes.
-              <p>
-                I focus on creating <strong>polished, user-focused interfaces</strong> and
-                reusable implementations that bridge the gap between <strong>design and
-                engineering</strong>.
-              </p>
-            </div>
-          </div>
-          <div
-            css={mq({
-              textAlign: "center",
-              fontSize: [24, 24, 44],
-              fontWeight: 700,
-              marginTop: 40,
-              marginBottom: 24,
-            })}
-          >
-            My Tools
-          </div>
-          <div
-            css={{
-              display: "flex",
-              justifyContent: "center",
-            }}
-          >
-            <div
-              css={mq({
-                display: "flex",
-                justifyContent: "space-evenly",
-                flexWrap: "wrap",
-                width: ["70%", "70%", "70%"],
-                padding: ["0px 16px", "0px 16px", 0],
-                // marginTop: 40,
-                marginBottom: 40,
-              })}
-            >
-              {skill_list.map((skill) => (
-                <SkillComp
-                  logo={skill.logo}
-                  active_color={skill.active_color}
-                  text={skill.title}
-                />
-              ))}
-            </div>
-          </div>
-          <div
-            css={{
-              background: "#f4f4f4",
-              height: 1,
-              width: "100%",
-              marginTop: 40,
-            }}
-          ></div>
-          <div>
-            <div
-              css={mq({
-                textAlign: "center",
-                fontSize: [24, 24, 44],
+                padding: "12px 19px",
+                borderRadius: 30,
+                fontSize: 12,
                 fontWeight: 700,
-                marginTop: 40,
-                marginBottom: 40,
-              })}
-            >
-              Past works
-            </div>
-            <div
-              css={{
-                display: "flex",
-                justifyContent: "center",
-                margin: "40px 0px",
+                textDecoration: "none",
+                whiteSpace: "nowrap",
               }}
             >
-              <div
-                css={mq({
-                  width: ["100%", "100%", "70%"],
-                  display: "flex",
-                  padding: ["0px 16px", "0px 16px", 0],
-                  alignItems: "center",
-                  justifyContent: "space-around",
-                })}
-              >
-                {categories.map((category_item) => (
-                  <div
-                    css={mq({
-                      fontSize: [18, 18, 24],
-                      fontWeight: 500,
-                      textTransform: "capitalize",
-                      color:
-                        selected === category_item.title ? "#111" : "#c4c4c4",
-                      cursor: "pointer",
-                    })}
-                    onClick={() => {
-                      setSelected(category_item.title);
-                    }}
-                  >
-                    {category_item.title}
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div
-              css={{
-                display: "flex",
-                justifyContent: "center",
-              }}
-            >
-              <div
-                css={(theme) =>
-                  mq({
-                    display: "grid",
-                    gridTemplateColumns: [
-                      "repeat(1, 1fr)",
-                      "repeat(1, 1fr)",
-                      "repeat(1, 1fr)",
-                    ],
-                    width: ["100%", "100%", "60%"],
-                    padding: ["0px 16px", "0px 16px", 0],
-                    rowGap: [20, 20, 40],
-                    columnGap: [20, 20, 40],
-                    marginBottom: 100,
-                  })
-                }
-              >
-                {past_works
-                  .filter((work) => work.categories.includes(selected))
-                  .map((work, index) => (
-                    <div
-                      css={mq({
-                        width: "100%",
-                        display: "grid",
-                        marginBottom: 50,
-                        gridTemplateColumns: [
-                          "repeat(1, 1fr)",
-                          "repeat(1, 1fr)",
-                          "repeat(1, 1fr)",
-                        ],
-                        width: ["100%", "100%", "100%"],
+              Let's talk ↗
+            </a>
+          </nav>
+        </motion.header>
 
-                        rowGap: [20, 20, 40],
-                        columnGap: [20, 20, 40],
-                      })}
-                      key={work.title}
-                    >
-                      <div>
-                        <a href={work.url} target="_blank">
-                          <motion.div
-                            initial={{
-                              opacity: 0,
-                              scale: 0.99,
-                              borderRadius: 10,
-                            }}
-                            animate={{
-                              opacity: 1,
-                              scale: 0.99,
-                              filter: "none",
-                            }}
-                            exit={{ opacity: 0, scale: 0.99 }}
-                            whileHover={{
-                              backgroundColor: work.bg_hover,
-                              // scale: 1.01,
-                              borderRadius: 20,
-                              filter: ["blur(0.4px)", "none"],
-                            }}
-                            css={mq({
-                              width: "100%",
-                              height: [200, 200, 300],
-                              borderRadius: 10,
-                              backgroundColor: work.bg,
-                              display: "flex",
-                              justifyContent: "center",
-                              alignItems: "center",
-                            })}
-                          >
-                            <img
-                              css={mq({
-                                width: work.width,
-                                height: work.height,
-                              })}
-                              src={`home/past_works/${work.logo}`}
-                            />
-                          </motion.div>
-                        </a>
-                      </div>
+        {/* HERO */}
 
-                      <div>
-                        <div
-                        // css={{
-                        //   display: "flex",
-                        //   justifyContent: "left",
-                        // }}
-                        >
-                          <div
-                            css={(theme) =>
-                              mq({
-                                width: "100%",
-                                fontSize: [22, 22, 24],
-                                fontWeight: 800,
-                                marginTop: [10, 10, 0],
-                                color: theme.colors.Neutral_600,
-                              })
-                            }
-                          >
-                            {work.title}
-                          </div>
-                          {/* <div
-                            css={{
-                              marginTop: 8,
-                            }}
-                          >
-                            <a href={work.url} target="_blank">
-                              <img
-                                css={{
-                                  width: 24,
-                                  height: 24,
-                                }}
-                                src={`/svg/link.svg`}
-                              />
-                            </a>
-                          </div> */}
-                        </div>
-                        <div>
-                          <div
-                            css={(theme) => ({
-                              fontSize: 16,
-                              fontWeight: 600,
-                              // textTransform: "capitalize",
-
-                              color: theme.colors.Neutral_800,
-                              marginTop: 10,
-                            })}
-                          >
-                            {work.description}
-                          </div>
-                          <ul
-                            css={{
-                              marginTop: 20,
-                            }}
-                          >
-                            {work.job_role.map((role) => (
-                              <li
-                                css={(theme) => ({
-                                  fontSize: 16,
-                                  fontWeight: 500,
-                                  // textTransform: "capitalize",
-                                  color: theme.colors.Neutral_700,
-                                  marginBottom: 10,
-                                })}
-                              >
-                                {role.role}
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                        <div
-                          css={mq({
-                            width: "100%",
-                            fontSize: [22, 22, 24],
-                            fontWeight: 800,
-                            color: "#777",
-                            marginTop: [10, 10, 20],
-                          })}
-                        >
-                          Tools
-                        </div>
-
-                        <div
-                          css={mq({
-                            display: "flex",
-                            flexWrap: "wrap",
-                            justifyContent: "left",
-                            marginTop: [10, 10, 10],
-                          })}
-                        >
-                          {work.tools.map((tool) => (
-                            <motion.div
-                              whileHover={{
-                                backgroundColor: "#000",
-                                color: "#fff",
-                              }}
-                              transition={{
-                                ease: "easeInOut",
-                                duration: 0.2,
-                              }}
-                              css={{
-                                marginRight: 10,
-                                padding: "2px 8px",
-                                fontWeight: 500,
-                                fontSize: 16,
-                                borderRadius: 14,
-                                backgroundColor: "#f4f4f4",
-                                marginBottom: 10,
-                              }}
-                            >
-                              #{tool.title}
-                            </motion.div>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-              </div>
-            </div>{" "}
-          </div>
-          <div
-            css={{
-              backgroundColor: "#f1f1f1",
-              padding: "60px 0px",
-            }}
+        <section
+          id="about"
+          css={mq({
+            display: "grid",
+            gridTemplateColumns: ["1fr", "1fr", "1.25fr .75fr"],
+            alignItems: "center",
+            gap: [45, 45, 65],
+            padding: ["75px 0px", "90px 0px", "115px 0px"],
+          })}
+        >
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
           >
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              css={mq({
-                fontSize: [32, 42, 52],
+            <div
+              css={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 9,
+                padding: "9px 14px",
+                borderRadius: 30,
+                background: "#eeeee9",
+                fontSize: 11,
                 fontWeight: 800,
-                textAlign: "center",
+                color: "#666",
+                letterSpacing: ".5px",
+                marginBottom: 27,
+              }}
+            >
+              <span
+                css={{
+                  width: 7,
+                  height: 7,
+                  background: "#69a87d",
+                  borderRadius: "50%",
+                }}
+              />
+              SOFTWARE ENGINEER & DESIGN ENGINEER
+            </div>
+
+            <h1
+              css={mq({
+                fontSize: [43, 60, 76],
+                lineHeight: [1.12, 1.08, 1.04],
+                letterSpacing: ["-2.5px", "-3.5px", "-5px"],
+                fontWeight: 800,
+                margin: 0,
+                maxWidth: 750,
               })}
             >
-              Built with{" "}
-            </motion.div>
+              Building digital
+              <span css={{ color: "#99998e" }}>
+                {" "}experiences{" "}
+              </span>
+              that make an impact.
+            </h1>
+
+            <p
+              css={{
+                color: "#777",
+                fontSize: 16,
+                lineHeight: 1.9,
+                maxWidth: 590,
+                marginTop: 27,
+              }}
+            >
+              Hello, I'm{" "}
+              <strong css={{ color: "#222" }}>
+                Eboigbodin Chukwuyem
+              </strong>
+              . A Software Engineer and Design Engineer with over six
+              years of experience building modern web and mobile
+              applications.
+            </p>
+
+            <p
+              css={{
+                color: "#777",
+                fontSize: 15,
+                lineHeight: 1.9,
+                maxWidth: 570,
+                marginTop: 12,
+              }}
+            >
+              I specialize in transforming product ideas and design
+              concepts into high-fidelity, interactive experiences,
+              bridging the gap between design and engineering.
+            </p>
 
             <div
               css={{
                 display: "flex",
-                justifyContent: "center",
+                flexWrap: "wrap",
+                alignItems: "center",
+                gap: 12,
+                marginTop: 32,
               }}
             >
-              <motion.img
-                initial={{ scale: 0.9 }}
-                animate={{ scale: 1 }}
-                transition={{
-                  duration: 0.5,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  repeatType: "reverse",
+              <motion.a
+                href="#projects"
+                whileHover={{ y: -3 }}
+                whileTap={{ scale: 0.97 }}
+                css={{
+                  background: "#171717",
+                  color: "#fff",
+                  textDecoration: "none",
+                  padding: "16px 23px",
+                  borderRadius: 8,
+                  fontSize: 13,
+                  fontWeight: 700,
                 }}
-                css={mq({
-                  width: 42,
-                  height: 42,
-                })}
-                src={`home/cv-heart.svg`}
-              />
+              >
+                Explore my work ↗
+              </motion.a>
+
+              <motion.button
+                whileHover={{ y: -3 }}
+                whileTap={{ scale: 0.97 }}
+                onClick={() => router.push("/resume")}
+                css={{
+                  background: "#efefea",
+                  color: "#171717",
+                  border: "none",
+                  padding: "16px 23px",
+                  borderRadius: 8,
+                  fontSize: 13,
+                  fontWeight: 700,
+                  cursor: "pointer",
+                }}
+              >
+                View resume ↗
+              </motion.button>
             </div>
+
             <div
               css={{
                 display: "flex",
-                justifyContent: "center",
-                marginTop: 20,
+                alignItems: "center",
+                gap: 12,
+                marginTop: 37,
               }}
             >
               {social_links.map((link) => (
-                <a key={link.title} href={link.link} target="_blank">
-                  <motion.div
-                    whileHover={{
-                      backgroundColor: "#eee",
+                <motion.a
+                  key={link.title}
+                  href={link.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ y: -4 }}
+                  css={socialButton}
+                >
+                  <img
+                    src={`home/tabs/${link.image}`}
+                    alt={link.title}
+                    css={{
+                      width: 20,
+                      height: 20,
+                      objectFit: "contain",
                     }}
-                    css={mq({
-                      width: [24, 24, 34],
-                      height: [24, 24, 34],
-                      background: "#fff",
-                      borderRadius: "100%",
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      margin: "0px 4px",
-                    })}
-                  >
-                    <img
-                      css={mq({
-                        width: [18, 18, 24],
-                        height: [18, 18, 24],
-                      })}
-                      src={`home/tabs/${link.image}`}
-                    />
-                  </motion.div>
-                </a>
+                  />
+                </motion.a>
               ))}
-              {/* <motion.div
-            whileHover={{
-              backgroundColor: "#000",
-              color: "#fff",
-            }}
-            css={mq({
-              height: [24, 24, 34],
-              background: "#fff",
-              borderRadius: 30,
+            </div>
+          </motion.div>
+
+          {/* PROFILE */}
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.94 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            css={{
+              position: "relative",
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              margin: "0px 4px",
-              textTransform: "capitalize",
-              padding: "0px 8px",
-              fontSize: [14, 14, 16],
-              fontWeight: 500,
-              cursor: "pointer",
-            })}
-            onClick={() => router.push("/resume")}
+              padding: "15px",
+            }}
           >
-            my resume
-          </motion.div> */}
-              <motion.a
-                href="mailto:eboigbodinchukwuyem@gmail.com"
-                target="_blank"
+            <div
+              css={mq({
+                width: ["85%", "75%", "100%"],
+                maxWidth: 360,
+                aspectRatio: "0.85",
+                borderRadius:24,
+                background: "#e9e9e2",
+                overflow: "hidden",
+              })}
+            >
+              <img
+                src="/home/personal_image.webp"
+                alt="Eboigbodin Chukwuyem"
                 css={{
-                  textDecoration: "none",
-                  color: "#000",
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  objectPosition: "center",
                 }}
-                whileHover={{
-                  color: "#fff",
+              />
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5 }}
+              css={{
+                position: "absolute",
+                bottom: 35,
+                left: 0,
+                background: "#fff",
+                padding: "16px 20px",
+                borderRadius: 12,
+                boxShadow: "0 10px 40px rgba(0,0,0,.07)",
+                fontSize: 11,
+                fontWeight: 700,
+              }}
+            >
+              <span css={{ color: "#999" }}>MY APPROACH</span>
+              <div css={{ fontSize: 14, marginTop: 6 }}>
+                Design × Engineering
+              </div>
+            </motion.div>
+          </motion.div>
+        </section>
+
+        {/* SKILLS */}
+
+        <section
+          id="skills"
+          css={{
+            borderTop: "1px solid #eaeae6",
+            borderBottom: "1px solid #eaeae6",
+            padding: "65px 0px",
+          }}
+        >
+          <div
+            css={mq({
+              display: "flex",
+              flexDirection: ["column", "column", "row"],
+              justifyContent: "space-between",
+              alignItems: ["flex-start", "flex-start", "center"],
+              gap: 35,
+            })}
+          >
+            <div css={{ maxWidth: 300 }}>
+              <div
+                css={{
+                  fontSize: 11,
+                  fontWeight: 800,
+                  letterSpacing: 2,
+                  color: "#999",
                 }}
               >
+                MY EXPERTISE
+              </div>
+
+              <h2
+                css={{
+                  ...sectionTitle,
+                  fontSize: 32,
+                  marginTop: 12,
+                }}
+              >
+                Tools I work with.
+              </h2>
+
+              <p
+                css={{
+                  color: "#888",
+                  fontSize: 14,
+                  lineHeight: 1.8,
+                  marginTop: 12,
+                }}
+              >
+                Technologies I use to bring ideas and digital
+                experiences to life.
+              </p>
+            </div>
+
+            <div
+              css={mq({
+                display: "flex",
+                flexWrap: "wrap",
+                justifyContent: ["flex-start", "flex-start", "flex-end"],
+                alignItems: "center",
+                gap: [10, 14, 17],
+                width: ["100%", "100%", "65%"],
+              })}
+            >
+              {skill_list.map((skill) => (
                 <motion.div
-                  whileHover={{
-                    backgroundColor: "#000",
-                    color: "#fff",
+                  key={skill[2]}
+                  whileHover={{ y: -4 }}
+                  css={{
+                    background: "#efefea",
+                    padding: "10px 13px",
+                    borderRadius: 9,
+                    transition: "background .2s",
+                    ":hover": {
+                      background: "#e2e2da",
+                    },
                   }}
-                  css={mq({
-                    height: [24, 24, 34],
-                    background: "#fff",
-                    borderRadius: 30,
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    margin: "0px 4px",
-                    textTransform: "capitalize",
-                    padding: "0px 8px",
-                    fontSize: [14, 14, 16],
-                    fontWeight: 500,
-                    cursor: "pointer",
-                    textDecoration: "none",
-                    color: "#000",
-                  })}
-                  // onClick={() => router.push("/resume")}
                 >
-                  contact me
-                </motion.div>{" "}
-              </motion.a>
+                  <SkillComp
+                    logo={skill[0]}
+                    active_color={skill[1]}
+                    text={skill[2]}
+                  />
+                </motion.div>
+              ))}
             </div>
           </div>
-        </div>
+        </section>
+
+        {/* PROJECTS */}
+
+        <section
+          id="projects"
+          css={{
+            padding: "100px 0px 120px",
+          }}
+        >
+          <div
+            css={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "flex-end",
+              flexWrap: "wrap",
+              gap: 25,
+              marginBottom: 45,
+            }}
+          >
+            <div>
+              <div
+                css={{
+                  fontSize: 11,
+                  fontWeight: 800,
+                  letterSpacing: 2,
+                  color: "#999",
+                }}
+              >
+                SELECTED WORK
+              </div>
+
+              <h2
+                css={mq({
+                  fontSize: [38, 48, 58],
+                  letterSpacing: "-3px",
+                  margin: "12px 0px 0px",
+                  fontWeight: 800,
+                })}
+              >
+                Things I've built.
+              </h2>
+
+              <p
+                css={{
+                  color: "#888",
+                  fontSize: 15,
+                  lineHeight: 1.8,
+                  marginTop: 12,
+                }}
+              >
+                A selection of products and applications I've
+                contributed to.
+              </p>
+            </div>
+
+            {/* FILTERS */}
+
+            <div
+              css={{
+                display: "flex",
+                gap: 8,
+                flexWrap: "wrap",
+              }}
+            >
+              {categories.map((category) => (
+                <button
+                  key={category.title}
+                  onClick={() => setSelected(category.title)}
+                  css={{
+                    border: "none",
+                    borderRadius: 30,
+                    padding: "11px 17px",
+                    fontSize: 12,
+                    fontWeight: 700,
+                    textTransform: "capitalize",
+                    cursor: "pointer",
+                    background:
+                      selected === category.title
+                        ? "#171717"
+                        : "#efefea",
+                    color:
+                      selected === category.title
+                        ? "#fff"
+                        : "#777",
+                    transition: "all .2s",
+                  }}
+                >
+                  {category.title}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* PROJECT CARDS */}
+
+          <div
+            css={{
+              display: "grid",
+              gridTemplateColumns: "1fr",
+              gap: 25,
+            }}
+          >
+            <AnimatePresence mode="popLayout">
+              {past_works
+                .filter((work) =>
+                  work.categories.includes(selected)
+                )
+                .map((work, index) => (
+                  <motion.article
+                    key={work.title}
+                    layout
+                    initial={{ opacity: 0, y: 25 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 15 }}
+                    transition={{ duration: 0.35 }}
+                    css={mq({
+                      display: "grid",
+                      gridTemplateColumns: [
+                        "1fr",
+                        "1fr",
+                        "1.05fr .95fr",
+                      ],
+                      gap: [20, 25, 40],
+                      padding: [13, 18, 22],
+                      background: "#fff",
+                      border: "1px solid #eaeae6",
+                      borderRadius: 16,
+                      alignItems: "center",
+                    })}
+                  >
+                    {/* PROJECT IMAGE */}
+
+                    <a
+                      href={work.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      css={{
+                        display: "block",
+                        textDecoration: "none",
+                      }}
+                    >
+                      <motion.div
+                        whileHover={{ scale: 0.985 }}
+                        css={{
+                          width: "100%",
+                          minHeight: 250,
+                          borderRadius: 11,
+                          background: work.bg,
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                          overflow: "hidden",
+                          transition: "background .3s",
+                          ":hover": {
+                            background: work.bg_hover,
+                          },
+                        }}
+                      >
+                        <img
+                          src={`home/past_works/${work.logo}`}
+                          alt={work.title}
+                          css={{
+                            width: "auto",
+                            height: "auto",
+                            maxWidth: "65%",
+                            maxHeight: 145,
+                            objectFit: "contain",
+                          }}
+                        />
+                      </motion.div>
+                    </a>
+
+                    {/* PROJECT DETAILS */}
+
+                    <div
+                      css={{
+                        padding: "12px 5px",
+                      }}
+                    >
+                      <div
+                        css={{
+                          fontSize: 11,
+                          color: "#999",
+                          fontWeight: 800,
+                          letterSpacing: 1.5,
+                          marginBottom: 12,
+                        }}
+                      >
+                        PROJECT {String(index + 1).padStart(2, "0")}
+                      </div>
+
+                      <h3
+                        css={mq({
+                          fontSize: [23, 25, 29],
+                          letterSpacing: "-1px",
+                          lineHeight: 1.3,
+                          fontWeight: 800,
+                          margin: 0,
+                        })}
+                      >
+                        {work.title}
+                      </h3>
+
+                      <p
+                        css={{
+                          color: "#777",
+                          fontSize: 14,
+                          lineHeight: 1.8,
+                          marginTop: 14,
+                          fontWeight: 500,
+                        }}
+                      >
+                        {work.description}
+                      </p>
+
+                      <div css={{ marginTop: 22 }}>
+                        <div
+                          css={{
+                            fontSize: 11,
+                            fontWeight: 800,
+                            letterSpacing: 1,
+                            color: "#999",
+                            marginBottom: 13,
+                          }}
+                        >
+                          MY CONTRIBUTIONS
+                        </div>
+
+                        {work.job_role.map((role, roleIndex) => (
+                          <div
+                            key={roleIndex}
+                            css={{
+                              display: "flex",
+                              gap: 10,
+                              marginBottom: 11,
+                              fontSize: 13,
+                              lineHeight: 1.8,
+                              color: "#666",
+                            }}
+                          >
+                            <span
+                              css={{
+                                color: "#aaa",
+                                fontWeight: 800,
+                              }}
+                            >
+                              ↗
+                            </span>
+                            <span>{role}</span>
+                          </div>
+                        ))}
+                      </div>
+
+                      {/* TECHNOLOGIES */}
+
+                      <div
+                        css={{
+                          display: "flex",
+                          flexWrap: "wrap",
+                          gap: 8,
+                          marginTop: 22,
+                        }}
+                      >
+                        {work.tools.map((tool) => (
+                          <span
+                            key={tool}
+                            css={{
+                              background: "#f1f1ed",
+                              color: "#666",
+                              borderRadius: 5,
+                              padding: "7px 10px",
+                              fontSize: 11,
+                              fontWeight: 700,
+                            }}
+                          >
+                            {tool}
+                          </span>
+                        ))}
+                      </div>
+
+                      <a
+                        href={work.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        css={{
+                          display: "inline-flex",
+                          alignItems: "center",
+                          gap: 10,
+                          marginTop: 25,
+                          color: "#171717",
+                          fontSize: 13,
+                          fontWeight: 800,
+                          textDecoration: "none",
+                          transition: "all .2s",
+                          ":hover": {
+                            gap: 16,
+                          },
+                        }}
+                      >
+                        Explore project <span>↗</span>
+                      </a>
+                    </div>
+                  </motion.article>
+                ))}
+            </AnimatePresence>
+          </div>
+        </section>
+
+        {/* CONTACT */}
+
+        <footer
+          id="contact"
+          css={{
+            background: "#171717",
+            color: "#fff",
+            borderRadius: "20px 20px 0px 0px",
+            padding: "75px 30px 30px",
+          }}
+        >
+          <div
+            css={{
+              maxWidth: 850,
+              margin: "0 auto",
+              textAlign: "center",
+            }}
+          >
+            <div
+              css={{
+                fontSize: 11,
+                fontWeight: 800,
+                letterSpacing: 2,
+                color: "#888",
+              }}
+            >
+              HAVE A PROJECT IN MIND?
+            </div>
+
+            <h2
+              css={mq({
+                fontSize: [40, 52, 68],
+                lineHeight: 1.1,
+                letterSpacing: "-3px",
+                margin: "20px 0px",
+                fontWeight: 800,
+              })}
+            >
+              Let's build something
+              <span css={{ color: "#999" }}>
+                {" "}meaningful.
+              </span>
+            </h2>
+
+            <p
+              css={{
+                fontSize: 15,
+                lineHeight: 1.8,
+                color: "#999",
+                maxWidth: 480,
+                margin: "20px auto 30px",
+              }}
+            >
+              Have an idea, an opportunity, or simply want to
+              connect? I'd love to hear from you.
+            </p>
+
+            <motion.a
+              href="mailto:eboigbodinchukwuyem@gmail.com"
+              whileHover={{ y: -3 }}
+              css={{
+                display: "inline-flex",
+                background: "#fff",
+                color: "#171717",
+                padding: "16px 25px",
+                borderRadius: 8,
+                textDecoration: "none",
+                fontWeight: 800,
+                fontSize: 14,
+              }}
+            >
+              Get in touch ↗
+            </motion.a>
+          </div>
+
+          {/* FOOTER BOTTOM */}
+
+          <div
+            css={{
+              borderTop: "1px solid #333",
+              marginTop: 75,
+              paddingTop: 25,
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              flexWrap: "wrap",
+              gap: 15,
+            }}
+          >
+            <div
+              css={{
+                fontSize: 15,
+                fontWeight: 900,
+                letterSpacing: "-1px",
+              }}
+            >
+              EC.
+            </div>
+
+            <div
+              css={{
+                fontSize: 12,
+                color: "#777",
+              }}
+            >
+              Designed & built with care.
+            </div>
+
+            <div
+              css={{
+                fontSize: 12,
+                color: "#777",
+              }}
+            >
+              © {new Date().getFullYear()} Eboigbodin Chukwuyem
+            </div>
+          </div>
+        </footer>
       </div>
     </div>
   );
