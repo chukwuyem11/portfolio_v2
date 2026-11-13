@@ -4,19 +4,13 @@ import React, { useRef } from "react";
 import { Global, css } from "@emotion/react";
 import { useRouter } from "next/router";
 import ReactToPrint from "react-to-print";
-import facepaint from "facepaint";
-
-const breakpoints = [576, 768, 1200];
-const mq = facepaint(
-  breakpoints.map((bp) => `@media (min-width: ${bp}px)`)
-);
 
 const ResumePageComp = () => {
   const router = useRouter();
   const componentRef = useRef(null);
 
   const portfolio = {
-    name: "chukwuyem eboigbodin",
+    name: "Chukwuyem Eboigbodin",
     job_title: "Software Engineer",
     personal_img: "/home/personal_image.webp",
 
@@ -40,136 +34,146 @@ const ResumePageComp = () => {
     ],
 
     about:
-      "I'm Eboigbodin Chukwuyem, a passionate Software Engineer and Design Engineer with over six years of experience building modern web and mobile applications, Specialized in turning product ideas and design concepts into high-fidelity, interactive experiences, working closely with designers to transform mockups into real, functional prototypes. I focus on creating polished, user-focused interfaces and reusable implementations that bridge the gap between design and engineering.",
+      "Software Engineer and Design Engineer with over six years of experience developing modern web and mobile applications. Experienced in translating product requirements and design concepts into responsive, high-quality digital solutions. Skilled in building interactive user interfaces, developing application features, integrating third-party services and creating cross-platform mobile applications. Combines strong frontend development capabilities with backend experience and a keen eye for user experience, performance and maintainable code.",
 
     education: [
-      {
+     {
         qualification: "Bachelor of Science, Economics, Feb 21, 2025",
         university: "University of Ibadan - Ibadan, Oyo state, Nigeria",
       },
     ],
 
     skills: [
-      "Javascript",
-      "React js",
-      "Framer Motion",
-      "Capacitor js",
-      "Next js",
-      "Wordpress",
-      "Node js",
-      "Typescript",
-      "Express js",
-      "Figma",
-      "Tailwind",
+      {
+        category: "Frontend Development",
+        items: [
+          "JavaScript",
+          "React.js",
+          "Next.js",
+          "TypeScript",
+          "Tailwind CSS",
+          "Emotion.js",
+          "Framer Motion",
+        ],
+      },
+      {
+        category: "Backend Development",
+        items: [
+          "Node.js",
+          "Express.js",
+          "MySQL",
+          "Sequelize",
+          "REST API Integration",
+        ],
+      },
+      {
+        category: "Mobile Development",
+        items: [
+          "Capacitor.js",
+          "Android",
+          "iOS",
+          "Cross-platform Development",
+        ],
+      },
+      {
+        category: "Design & CMS",
+        items: [
+          "Figma",
+          "WordPress",
+          "WooCommerce",
+        ],
+      },
     ],
 
     past_works: [
       {
-        title: "Federal Ministry Of Lagos And Employment",
-        role_type: "remote",
-        period: "Feb 2023 - October 2024",
+        title: "Federal Ministry of Labour and Employment, Nigeria",
+        role_type: "Remote",
+        period: "February 2023 – October 2024",
+        position: "Software Developer",
         description:
-          "A web application managing the processes of the Federal Ministry Of Lagos And Employment",
+          "Development of an integrated government web platform supporting occupational safety and factory management processes.",
         job_role: [
-          {
-            role: "Collaborated with a team of 5 developers to build a large-scale government web platform with over 5 web application that are all linked together for registration and accident management of Factories in Nigeria.",
-          },
+          "Collaborated with a team of five developers to build a large-scale government platform comprising multiple interconnected web applications.",
+          "Contributed to digital systems for factory registration, accident reporting and occupational safety management.",
+          "Worked on interconnected application workflows designed to support administrative processes within the Federal Ministry.",
         ],
       },
       {
-        title: "Maxbox mobile app",
-        role_type: "remote",
-        period: "January 2022 - November 2023",
-        description: "A movie streaming mobile app",
+        title: "Maxbox",
+        role_type: "Remote",
+        period: "January 2022 – November 2023",
+        position: "Software Developer",
+        description:
+          "Development of a cross-platform movie streaming application and its supporting web management dashboard.",
         job_role: [
-          {
-            role: "Built an interactive mobile movie streaming application with features for saving and downloading media from social platforms.",
-          },
-          {
-            role: "Worked with on the web dashboard for uploading and managing Petmax Movies and Movie categories",
-          },
-          {
-            role: "The complex mobile app was built on web technologies including Nextjs, Emotionjs and Framer motion, and utilizing Capacitor to wrap the web app and compiling it into an android and IOS mobile App",
-          },
+          "Developed an interactive mobile streaming application with features for accessing, saving and downloading media from social platforms.",
+          "Contributed to a web-based dashboard for uploading, organizing and managing movies and movie categories.",
+          "Built the mobile application using Next.js, Emotion.js and Framer Motion, with Capacitor for Android and iOS deployment.",
         ],
       },
       {
-        title: "Debbydot mobile app",
-        role_type: "remote",
-        period: "March 2022 - November 2023",
-        description: "An E-commerce shopping platform",
+        title: "Debbydot",
+        role_type: "Remote",
+        period: "March 2022 – November 2023",
+        position: "Mobile Application Developer",
+        description:
+          "Development of a multi-vendor e-commerce platform for mobile shopping.",
         job_role: [
-          {
-            role: "While at doncept, we Built a multi-vendor e-commerce Android and IOS mobile application",
-          },
-          {
-            role: "we implemented a complex interface for sorting and filtering products using different attributes",
-          },
-          {
-            role: "We integrated the mobile appliation with an external content management platform Wordpress utilizing the Woocommerce API",
-          },
+          "Contributed to the development of a multi-vendor e-commerce application for Android and iOS.",
+          "Implemented product discovery features, including dynamic product sorting and filtering based on multiple attributes.",
+          "Integrated the mobile application with WordPress and WooCommerce APIs to manage product and commerce-related data.",
         ],
       },
       {
-        title: "Ebbys glow mobile app",
-        role_type: "remote",
-        period: "March 2022 - November 2023",
-        description: "An E-commerce shopping platform",
+        title: "Ebbys Glow",
+        role_type: "Remote",
+        period: "March 2022 – November 2023",
+        position: "Mobile Application Developer",
+        description:
+          "Development of an e-commerce mobile application for skincare and beauty products.",
         job_role: [
-          {
-            role: "We built a multi-vendor e-commerce Android and IOS mobile application",
-          },
-          {
-            role: "we implemented a complex interface for sorting and filtering products using different attributes",
-          },
-          {
-            role: "We integrated the mobile appliation with an external content management platform Wordpress utilizing the Woocommerce API",
-          },
+          "Contributed to the development of a multi-vendor e-commerce mobile application for Android and iOS.",
+          "Implemented product browsing, sorting and filtering interfaces to improve product discovery.",
+          "Integrated the application with WordPress and WooCommerce APIs for product and commerce management.",
         ],
       },
       {
-        title: "Glacee waters website",
-        role_type: "remote",
-        period: "october 2022 - November 2023",
-        description: "An wordpress website for a water producing company",
+        title: "Glacee Waters",
+        role_type: "Remote",
+        period: "October 2022 – November 2023",
+        position: "Web Developer",
+        description:
+          "Development of a corporate website for a water production company.",
         job_role: [
-          {
-            role: "We built a standard company website a water producing company",
-          },
+          "Developed a company website to establish the brand's online presence and communicate its products and services.",
+          "Implemented the website using WordPress and Elementor.",
         ],
       },
       {
         title: "Doncept",
-        role_type: "remote",
-        period: "2019 - 2020",
-        description: "Web Application Development Agency",
+        role_type: "Remote",
+        period: "2019 – 2020",
+        position: "Web Developer",
+        description:
+          "Web application development agency delivering digital solutions for clients.",
         job_role: [
-          {
-            role: "Integrated innovative techniques into creative web designs creating well defined web implementation of interface designs",
-          },
-          {
-            role: "Directly contributed and implemented the development of different web solutions for our clients",
-          },
-          {
-            role: "Maintained and made adjustments to legacy codebase of clients",
-          },
+          "Translated interface designs into functional, responsive web applications with a focus on usability and visual consistency.",
+          "Contributed to the design and development of web solutions for multiple client projects.",
+          "Maintained existing applications, improved legacy code and implemented updates to meet evolving client requirements.",
         ],
       },
       {
         title: "Tobeetoe",
-        role_type: "remote",
-        period: "May 2017 - Jun 2018",
-        description: "Web Application Development Agency",
+        role_type: "Remote",
+        period: "May 2017 – June 2018",
+        position: "Web Developer",
+        description:
+          "Web application development agency focused on building digital solutions.",
         job_role: [
-          {
-            role: "Integrated innovative techniques into creative web designs creating well defined web implementation of interface designs",
-          },
-          {
-            role: "Directly contributed and implemented the development of different web solutions for our clients",
-          },
-          {
-            role: "Maintained and made adjustments to legacy codebase of clients",
-          },
+          "Implemented web interfaces based on design specifications, ensuring functional and visually consistent results.",
+          "Participated in the development of web applications and digital solutions for client projects.",
+          "Supported the maintenance and improvement of existing web applications.",
         ],
       },
     ],
@@ -185,7 +189,7 @@ const ResumePageComp = () => {
       boxSizing: "border-box",
 
       "@media print": {
-        minHeight: "0",
+        minHeight: 0,
         padding: 0,
         backgroundColor: "#fff",
       },
@@ -194,6 +198,7 @@ const ResumePageComp = () => {
     controls: {
       display: "flex",
       justifyContent: "center",
+      flexWrap: "wrap",
       gap: 12,
       marginBottom: 30,
 
@@ -225,24 +230,24 @@ const ResumePageComp = () => {
       maxWidth: 794,
       minHeight: 1123,
       margin: "0 auto",
-      padding: "65px 68px",
+      padding: "60px 65px",
       boxSizing: "border-box",
       backgroundColor: "#fff",
       boxShadow: "0 8px 40px rgba(0,0,0,.08)",
       color: "#202020",
 
+      "@media screen and (max-width: 650px)": {
+        padding: "35px 24px",
+      },
+
       "@media print": {
         width: "210mm",
         maxWidth: "none",
-        minHeight: "0",
+        minHeight: 0,
         margin: 0,
-        padding: "16mm 17mm",
+        padding: "15mm 16mm",
         boxShadow: "none",
         borderRadius: 0,
-      },
-
-      "@media screen and (max-width: 650px)": {
-        padding: "35px 25px",
       },
     },
 
@@ -250,12 +255,12 @@ const ResumePageComp = () => {
       display: "flex",
       justifyContent: "space-between",
       alignItems: "flex-start",
-      gap: 30,
-      paddingBottom: 28,
+      gap: 25,
+      paddingBottom: 25,
       borderBottom: "2px solid #202020",
 
-      "@media screen and (max-width: 650px)": {
-        gap: 15,
+      "@media screen and (max-width: 500px)": {
+        gap: 14,
       },
     },
 
@@ -269,79 +274,78 @@ const ResumePageComp = () => {
       fontWeight: 800,
       lineHeight: 1.15,
       letterSpacing: "-1px",
-      textTransform: "capitalize",
       color: "#171717",
       margin: 0,
 
-      "@media screen and (max-width: 650px)": {
+      "@media screen and (max-width: 500px)": {
         fontSize: 23,
       },
     },
 
     jobTitle: {
-      fontSize: 15,
-      fontWeight: 600,
+      fontSize: 14,
+      fontWeight: 700,
       color: "#666",
-      marginTop: 10,
+      marginTop: 9,
       letterSpacing: "1.5px",
       textTransform: "uppercase",
     },
 
     photo: {
-      width: 112,
-      height: 112,
+      width: 105,
+      height: 105,
       objectFit: "cover",
       objectPosition: "center",
       borderRadius: 8,
       flexShrink: 0,
       backgroundColor: "#eee",
 
-      "@media screen and (max-width: 650px)": {
-        width: 82,
-        height: 82,
+      "@media screen and (max-width: 500px)": {
+        width: 78,
+        height: 78,
       },
     },
 
     socials: {
       display: "flex",
       flexWrap: "wrap",
-      gap: "10px 20px",
-      marginTop: 24,
+      gap: "10px 17px",
+      marginTop: 22,
     },
 
     social: {
       display: "flex",
       alignItems: "center",
-      gap: 7,
+      gap: 6,
       color: "#555",
-      fontSize: 11,
+      fontSize: 10,
       textDecoration: "none",
       overflowWrap: "anywhere",
     },
 
     socialIcon: {
-      width: 15,
-      height: 15,
+      width: 14,
+      height: 14,
       objectFit: "contain",
       flexShrink: 0,
     },
 
     section: {
-      marginTop: 30,
+      marginTop: 27,
     },
 
     sectionHeading: {
       display: "flex",
       alignItems: "center",
       gap: 12,
-      marginBottom: 14,
+      marginBottom: 13,
     },
 
     sectionTitle: {
-      fontSize: 13,
+      fontSize: 12,
       fontWeight: 800,
       textTransform: "uppercase",
-      letterSpacing: "1.8px",
+      letterSpacing: "1.7px",
       color: "#202020",
       whiteSpace: "nowrap",
     },
@@ -353,51 +357,67 @@ const ResumePageComp = () => {
     },
 
     about: {
-      fontSize: 12.5,
-      lineHeight: 1.85,
+      fontSize: 11.5,
+      lineHeight: 1.8,
       color: "#555",
       margin: 0,
-    },
-
-    educationList: {
-      display: "flex",
-      flexDirection: "column",
-      gap: 8,
+      textAlign: "justify",
     },
 
     educationItem: {
       display: "flex",
       alignItems: "center",
-      fontSize: 13,
+      fontSize: 12,
       fontWeight: 600,
       color: "#333",
+    },
+
+    skillGroups: {
+      display: "grid",
+      gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
+      gap: 15,
+
+      "@media screen and (max-width: 500px)": {
+        gridTemplateColumns: "1fr",
+      },
+    },
+
+    skillGroup: {
+      minWidth: 0,
+    },
+
+    skillCategory: {
+      fontSize: 11,
+      fontWeight: 700,
+      color: "#333",
+      marginBottom: 8,
     },
 
     skillList: {
       display: "flex",
       flexWrap: "wrap",
-      gap: 8,
+      gap: 6,
     },
 
     skill: {
-      padding: "7px 11px",
+      padding: "6px 9px",
       border: "1px solid #e5e5e5",
-      borderRadius: 4,
+      borderRadius: 3,
       backgroundColor: "#fafafa",
       color: "#444",
-      fontSize: 10.5,
+      fontSize: 9.5,
       fontWeight: 600,
     },
 
     experienceList: {
       display: "flex",
       flexDirection: "column",
-      gap: 23,
+      gap: 21,
     },
 
     experience: {
       position: "relative",
-      paddingLeft: 17,
+      paddingLeft: 16,
       borderLeft: "2px solid #e5e5e5",
       pageBreakInside: "avoid",
       breakInside: "avoid",
@@ -417,71 +437,77 @@ const ResumePageComp = () => {
       display: "flex",
       justifyContent: "space-between",
       alignItems: "flex-start",
-      gap: 15,
+      gap: 12,
 
-      "@media screen and (max-width: 650px)": {
+      "@media screen and (max-width: 500px)": {
         flexDirection: "column",
-        gap: 5,
+        gap: 4,
       },
     },
 
     experienceTitle: {
-      fontSize: 14,
+      fontSize: 13,
       fontWeight: 700,
       lineHeight: 1.4,
       color: "#202020",
-      textTransform: "capitalize",
+    },
+
+    experiencePosition: {
+      fontSize: 10.5,
+      fontWeight: 600,
+      color: "#555",
+      marginTop: 3,
     },
 
     period: {
-      fontSize: 10.5,
+      fontSize: 10,
       fontWeight: 600,
       color: "#777",
       textAlign: "right",
       whiteSpace: "nowrap",
       paddingTop: 2,
 
-      "@media screen and (max-width: 650px)": {
+      "@media screen and (max-width: 500px)": {
         textAlign: "left",
       },
     },
 
     roleType: {
       display: "inline-block",
-      marginTop: 5,
+      marginTop: 6,
       padding: "3px 7px",
       borderRadius: 3,
       backgroundColor: "#f1f1f1",
       color: "#666",
-      fontSize: 9,
+      fontSize: 8,
       fontWeight: 700,
       textTransform: "uppercase",
       letterSpacing: ".7px",
     },
 
     description: {
-      marginTop: 9,
-      fontSize: 11.5,
+      marginTop: 8,
+      fontSize: 10.5,
       lineHeight: 1.6,
       fontWeight: 600,
       color: "#444",
     },
 
     roleList: {
-      margin: "9px 0 0",
-      paddingLeft: 16,
+      margin: "7px 0 0",
+      paddingLeft: 15,
     },
 
     roleItem: {
-      fontSize: 11,
-      lineHeight: 1.65,
+      fontSize: 10.5,
+      lineHeight: 1.6,
       color: "#666",
-      marginBottom: 5,
+      marginBottom: 4,
       paddingLeft: 2,
     },
 
     footer: {
-      marginTop: 35,
+      marginTop: 30,
       paddingTop: 12,
       borderTop: "1px solid #e5e5e5",
       display: "flex",
@@ -524,7 +550,7 @@ const ResumePageComp = () => {
         maxWidth: "none !important",
         minHeight: "0 !important",
         margin: "0 !important",
-        padding: "16mm 17mm !important",
+        padding: "15mm 16mm !important",
         boxShadow: "none !important",
         borderRadius: "0 !important",
         backgroundColor: "#fff !important",
@@ -557,10 +583,7 @@ const ResumePageComp = () => {
       <Global styles={globalStyles} />
 
       <div css={styles.page}>
-        <div
-          className="resume-screen"
-          css={styles.controls}
-        >
+        <div className="resume-screen" css={styles.controls}>
           <button
             css={styles.controlButton}
             onClick={() => router.push("/")}
@@ -576,12 +599,7 @@ const ResumePageComp = () => {
             )}
             content={() => componentRef.current}
             documentTitle="Chukwuyem Eboigbodin - Resume"
-            pageStyle={`
-              @page {
-                size: A4;
-                margin: 0;
-              }
-            `}
+            pageStyle="@page { size: A4; margin: 0; }"
           />
         </div>
 
@@ -590,11 +608,9 @@ const ResumePageComp = () => {
           className="resume-page"
           css={styles.paper}
         >
-          <div css={styles.header}>
+          <header css={styles.header}>
             <div css={styles.identity}>
-              <h1 css={styles.name}>
-                {portfolio.name}
-              </h1>
+              <h1 css={styles.name}>{portfolio.name}</h1>
 
               <div css={styles.jobTitle}>
                 {portfolio.job_title}
@@ -603,14 +619,15 @@ const ResumePageComp = () => {
               <div css={styles.socials}>
                 {portfolio.socials_links.map((item) => {
                   const isEmail = item.icon === "mail";
-                  const href = isEmail
-                    ? `mailto:${item.link}`
-                    : item.link;
 
                   return (
                     <a
                       key={item.icon}
-                      href={href}
+                      href={
+                        isEmail
+                          ? `mailto:${item.link}`
+                          : item.link
+                      }
                       target={isEmail ? undefined : "_blank"}
                       rel="noreferrer"
                       css={styles.social}
@@ -633,78 +650,63 @@ const ResumePageComp = () => {
               alt={portfolio.name}
               css={styles.photo}
             />
-          </div>
+          </header>
 
-          <section css={styles.section}>
+          <section className="resume-section" css={styles.section}>
             <div css={styles.sectionHeading}>
-              <div css={styles.sectionTitle}>
-                Profile
-              </div>
-
+              <div css={styles.sectionTitle}>Professional Summary</div>
               <div css={styles.headingLine} />
             </div>
 
-            <p css={styles.about}>
-              {portfolio.about}
-            </p>
+            <p css={styles.about}>{portfolio.about}</p>
           </section>
 
-          <section css={styles.section}>
+          <section className="resume-section" css={styles.section}>
             <div css={styles.sectionHeading}>
-              <div css={styles.sectionTitle}>
-                Education
-              </div>
-
+              <div css={styles.sectionTitle}>Education</div>
               <div css={styles.headingLine} />
             </div>
 
-            <div css={styles.educationList}>
-              {portfolio.education.map((item, index) => (
-                <div key={index}>
-                <div
-                  
-                  css={styles.educationItem}
-                >
-                  {item.qualification}
-                </div>
-                 <div
-                  
-                  css={styles.educationItem}
-                >
-                  {item.university}
-                </div>
+            {portfolio.education.map((item, index) => (
+              <div key={index}>
+              <div  css={styles.educationItem}>
+                {item.qualification}
+              </div>
+                <div  css={styles.educationItem}>
+                {item.university}
+              </div>
+              </div>
+            ))}
+          </section>
+
+          <section className="resume-section" css={styles.section}>
+            <div css={styles.sectionHeading}>
+              <div css={styles.sectionTitle}>Technical Skills</div>
+              <div css={styles.headingLine} />
+            </div>
+
+            <div css={styles.skillGroups}>
+              {portfolio.skills.map((group) => (
+                <div key={group.category} css={styles.skillGroup}>
+                  <div css={styles.skillCategory}>
+                    {group.category}
+                  </div>
+
+                  <div css={styles.skillList}>
+                    {group.items.map((skill) => (
+                      <span key={skill} css={styles.skill}>
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               ))}
             </div>
           </section>
 
-          <section css={styles.section}>
+          <section className="resume-section" css={styles.section}>
             <div css={styles.sectionHeading}>
-              <div css={styles.sectionTitle}>
-                Technical Skills
-              </div>
-
-              <div css={styles.headingLine} />
-            </div>
-
-            <div css={styles.skillList}>
-              {portfolio.skills.map((skill) => (
-                <div
-                  key={skill}
-                  css={styles.skill}
-                >
-                  {skill}
-                </div>
-              ))}
-            </div>
-          </section>
-
-          <section css={styles.section}>
-            <div css={styles.sectionHeading}>
-              <div css={styles.sectionTitle}>
-                Work Experience
-              </div>
-
+              <div css={styles.sectionTitle}>Professional Experience</div>
               <div css={styles.headingLine} />
             </div>
 
@@ -721,6 +723,10 @@ const ResumePageComp = () => {
                     <div>
                       <div css={styles.experienceTitle}>
                         {work.title}
+                      </div>
+
+                      <div css={styles.experiencePosition}>
+                        {work.position}
                       </div>
 
                       <span css={styles.roleType}>
@@ -743,7 +749,7 @@ const ResumePageComp = () => {
                         key={`${work.title}-${index}`}
                         css={styles.roleItem}
                       >
-                        {role.role}
+                        {role}
                       </li>
                     ))}
                   </ul>
@@ -752,10 +758,10 @@ const ResumePageComp = () => {
             </div>
           </section>
 
-          <div css={styles.footer}>
+          <footer css={styles.footer}>
             <span>{portfolio.name}</span>
             <span>{portfolio.job_title}</span>
-          </div>
+          </footer>
         </div>
       </div>
     </>
