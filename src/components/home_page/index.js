@@ -53,7 +53,7 @@ const HomePage = () => {
       title: "Federal Ministry Of Labour And Employment, Nigeria",
       url: "https://portal.osh.gov.ng/",
       logo: "osh_nigeria.svg",
-       bg: "#1d8d72",
+      bg: "#1d8d72",
       bg_hover: "#1a7d65",
       categories: ["all", "web applications"],
       description:
@@ -92,7 +92,7 @@ const HomePage = () => {
       title: "Favvii",
       url: "https://play.google.com/store/apps/details?id=com.favvii",
       logo: "favvii-logo.png",
-        bg: "#e8f7ff",
+      bg: "#e8f7ff",
       bg_hover: "#07344b",
       categories: ["all", "mobile applications"],
       description:
@@ -117,7 +117,7 @@ const HomePage = () => {
       title: "Glacee Waters",
       url: "https://glaceewater.com/",
       logo: "glacee_logo.png",
-     bg: "#e6f6f9",
+      bg: "#e6f6f9",
       bg_hover: "#b6e5ed",
       categories: ["all", "web applications"],
       description:
@@ -142,8 +142,8 @@ const HomePage = () => {
   };
 
   const socialButton = {
-    width: 42,
-    height: 42,
+    width: 44,
+    height: 44,
     borderRadius: 12,
     background: "#f0f0ec",
     display: "flex",
@@ -190,7 +190,7 @@ const HomePage = () => {
         >
           <div
             css={{
-              fontSize: 24,
+              fontSize: 26,
               fontWeight: 900,
               letterSpacing: "-2px",
             }}
@@ -211,7 +211,7 @@ const HomePage = () => {
                 href={`#${item.toLowerCase()}`}
                 css={{
                   color: "#777",
-                  fontSize: 13,
+                  fontSize: 15,
                   fontWeight: 600,
                   textDecoration: "none",
                   transition: "color .2s",
@@ -227,9 +227,9 @@ const HomePage = () => {
               css={{
                 background: "#171717",
                 color: "#fff",
-                padding: "12px 19px",
+                padding: "13px 20px",
                 borderRadius: 30,
-                fontSize: 12,
+                fontSize: 14,
                 fontWeight: 700,
                 textDecoration: "none",
                 whiteSpace: "nowrap",
@@ -262,10 +262,10 @@ const HomePage = () => {
                 display: "inline-flex",
                 alignItems: "center",
                 gap: 9,
-                padding: "9px 14px",
+                padding: "10px 15px",
                 borderRadius: 30,
                 background: "#eeeee9",
-                fontSize: 11,
+                fontSize: 13,
                 fontWeight: 800,
                 color: "#666",
                 letterSpacing: ".5px",
@@ -321,7 +321,7 @@ const HomePage = () => {
             <p
               css={{
                 color: "#777",
-                fontSize: 15,
+                fontSize: 16,
                 lineHeight: 1.9,
                 maxWidth: 570,
                 marginTop: 12,
@@ -349,9 +349,9 @@ const HomePage = () => {
                   background: "#171717",
                   color: "#fff",
                   textDecoration: "none",
-                  padding: "16px 23px",
+                  padding: "17px 24px",
                   borderRadius: 8,
-                  fontSize: 13,
+                  fontSize: 15,
                   fontWeight: 700,
                 }}
               >
@@ -366,9 +366,9 @@ const HomePage = () => {
                   background: "#efefea",
                   color: "#171717",
                   border: "none",
-                  padding: "16px 23px",
+                  padding: "17px 24px",
                   borderRadius: 8,
-                  fontSize: 13,
+                  fontSize: 15,
                   fontWeight: 700,
                   cursor: "pointer",
                 }}
@@ -398,8 +398,8 @@ const HomePage = () => {
                     src={`home/tabs/${link.image}`}
                     alt={link.title}
                     css={{
-                      width: 20,
-                      height: 20,
+                      width: 21,
+                      height: 21,
                       objectFit: "contain",
                     }}
                   />
@@ -427,7 +427,7 @@ const HomePage = () => {
                 width: ["85%", "75%", "100%"],
                 maxWidth: 360,
                 aspectRatio: "0.85",
-                borderRadius:24,
+                borderRadius: 24,
                 background: "#e9e9e2",
                 overflow: "hidden",
               })}
@@ -453,15 +453,15 @@ const HomePage = () => {
                 bottom: 35,
                 left: 0,
                 background: "#fff",
-                padding: "16px 20px",
+                padding: "17px 21px",
                 borderRadius: 12,
                 boxShadow: "0 10px 40px rgba(0,0,0,.07)",
-                fontSize: 11,
+                fontSize: 13,
                 fontWeight: 700,
               }}
             >
               <span css={{ color: "#999" }}>MY APPROACH</span>
-              <div css={{ fontSize: 14, marginTop: 6 }}>
+              <div css={{ fontSize: 16, marginTop: 6 }}>
                 Design × Engineering
               </div>
             </motion.div>
@@ -490,7 +490,7 @@ const HomePage = () => {
             <div css={{ maxWidth: 300 }}>
               <div
                 css={{
-                  fontSize: 11,
+                  fontSize: 13,
                   fontWeight: 800,
                   letterSpacing: 2,
                   color: "#999",
@@ -502,7 +502,7 @@ const HomePage = () => {
               <h2
                 css={{
                   ...sectionTitle,
-                  fontSize: 32,
+                  fontSize: 34,
                   marginTop: 12,
                 }}
               >
@@ -512,7 +512,7 @@ const HomePage = () => {
               <p
                 css={{
                   color: "#888",
-                  fontSize: 14,
+                  fontSize: 16,
                   lineHeight: 1.8,
                   marginTop: 12,
                 }}
@@ -538,7 +538,7 @@ const HomePage = () => {
                   whileHover={{ y: -4 }}
                   css={{
                     background: "#efefea",
-                    padding: "10px 13px",
+                    padding: "11px 14px",
                     borderRadius: 9,
                     transition: "background .2s",
                     ":hover": {
@@ -578,7 +578,7 @@ const HomePage = () => {
             <div>
               <div
                 css={{
-                  fontSize: 11,
+                  fontSize: 13,
                   fontWeight: 800,
                   letterSpacing: 2,
                   color: "#999",
@@ -601,7 +601,7 @@ const HomePage = () => {
               <p
                 css={{
                   color: "#888",
-                  fontSize: 15,
+                  fontSize: 16,
                   lineHeight: 1.8,
                   marginTop: 12,
                 }}
@@ -627,8 +627,8 @@ const HomePage = () => {
                   css={{
                     border: "none",
                     borderRadius: 30,
-                    padding: "11px 17px",
-                    fontSize: 12,
+                    padding: "12px 18px",
+                    fontSize: 14,
                     fontWeight: 700,
                     textTransform: "capitalize",
                     cursor: "pointer",
@@ -737,7 +737,7 @@ const HomePage = () => {
                     >
                       <div
                         css={{
-                          fontSize: 11,
+                          fontSize: 13,
                           color: "#999",
                           fontWeight: 800,
                           letterSpacing: 1.5,
@@ -749,7 +749,7 @@ const HomePage = () => {
 
                       <h3
                         css={mq({
-                          fontSize: [23, 25, 29],
+                          fontSize: [24, 27, 30],
                           letterSpacing: "-1px",
                           lineHeight: 1.3,
                           fontWeight: 800,
@@ -762,7 +762,7 @@ const HomePage = () => {
                       <p
                         css={{
                           color: "#777",
-                          fontSize: 14,
+                          fontSize: 16,
                           lineHeight: 1.8,
                           marginTop: 14,
                           fontWeight: 500,
@@ -774,7 +774,7 @@ const HomePage = () => {
                       <div css={{ marginTop: 22 }}>
                         <div
                           css={{
-                            fontSize: 11,
+                            fontSize: 13,
                             fontWeight: 800,
                             letterSpacing: 1,
                             color: "#999",
@@ -790,8 +790,8 @@ const HomePage = () => {
                             css={{
                               display: "flex",
                               gap: 10,
-                              marginBottom: 11,
-                              fontSize: 13,
+                              marginBottom: 12,
+                              fontSize: 15,
                               lineHeight: 1.8,
                               color: "#666",
                             }}
@@ -800,6 +800,7 @@ const HomePage = () => {
                               css={{
                                 color: "#aaa",
                                 fontWeight: 800,
+                                flexShrink: 0,
                               }}
                             >
                               ↗
@@ -826,8 +827,8 @@ const HomePage = () => {
                               background: "#f1f1ed",
                               color: "#666",
                               borderRadius: 5,
-                              padding: "7px 10px",
-                              fontSize: 11,
+                              padding: "8px 11px",
+                              fontSize: 13,
                               fontWeight: 700,
                             }}
                           >
@@ -846,7 +847,7 @@ const HomePage = () => {
                           gap: 10,
                           marginTop: 25,
                           color: "#171717",
-                          fontSize: 13,
+                          fontSize: 15,
                           fontWeight: 800,
                           textDecoration: "none",
                           transition: "all .2s",
@@ -884,7 +885,7 @@ const HomePage = () => {
           >
             <div
               css={{
-                fontSize: 11,
+                fontSize: 13,
                 fontWeight: 800,
                 letterSpacing: 2,
                 color: "#888",
@@ -910,7 +911,7 @@ const HomePage = () => {
 
             <p
               css={{
-                fontSize: 15,
+                fontSize: 16,
                 lineHeight: 1.8,
                 color: "#999",
                 maxWidth: 480,
@@ -928,11 +929,11 @@ const HomePage = () => {
                 display: "inline-flex",
                 background: "#fff",
                 color: "#171717",
-                padding: "16px 25px",
+                padding: "17px 26px",
                 borderRadius: 8,
                 textDecoration: "none",
                 fontWeight: 800,
-                fontSize: 14,
+                fontSize: 15,
               }}
             >
               Get in touch ↗
@@ -955,7 +956,7 @@ const HomePage = () => {
           >
             <div
               css={{
-                fontSize: 15,
+                fontSize: 17,
                 fontWeight: 900,
                 letterSpacing: "-1px",
               }}
@@ -965,7 +966,7 @@ const HomePage = () => {
 
             <div
               css={{
-                fontSize: 12,
+                fontSize: 14,
                 color: "#777",
               }}
             >
@@ -974,7 +975,7 @@ const HomePage = () => {
 
             <div
               css={{
-                fontSize: 12,
+                fontSize: 14,
                 color: "#777",
               }}
             >

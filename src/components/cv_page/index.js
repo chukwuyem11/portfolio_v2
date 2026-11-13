@@ -37,7 +37,7 @@ const ResumePageComp = () => {
       "Software Engineer and Design Engineer with over six years of experience developing modern web and mobile applications. Experienced in translating product requirements and design concepts into responsive, high-quality digital solutions. Skilled in building interactive user interfaces, developing application features, integrating third-party services and creating cross-platform mobile applications. Combines strong frontend development capabilities with backend experience and a keen eye for user experience, performance and maintainable code.",
 
     education: [
-     {
+      {
         qualification: "Bachelor of Science, Economics, Feb 21, 2025",
         university: "University of Ibadan - Ibadan, Oyo state, Nigeria",
       },
@@ -245,7 +245,7 @@ const ResumePageComp = () => {
         maxWidth: "none",
         minHeight: 0,
         margin: 0,
-        padding: "15mm 16mm",
+        padding: "14mm 15mm",
         boxShadow: "none",
         borderRadius: 0,
       },
@@ -270,7 +270,7 @@ const ResumePageComp = () => {
     },
 
     name: {
-      fontSize: 30,
+      fontSize: 38,
       fontWeight: 800,
       lineHeight: 1.15,
       letterSpacing: "-1px",
@@ -278,22 +278,26 @@ const ResumePageComp = () => {
       margin: 0,
 
       "@media screen and (max-width: 500px)": {
-        fontSize: 23,
+        fontSize: 28,
       },
     },
 
     jobTitle: {
-      fontSize: 14,
+      fontSize: 20,
       fontWeight: 700,
       color: "#666",
       marginTop: 9,
       letterSpacing: "1.5px",
       textTransform: "uppercase",
+
+      "@media screen and (max-width: 500px)": {
+        fontSize: 16,
+      },
     },
 
     photo: {
-      width: 105,
-      height: 105,
+      width: 110,
+      height: 110,
       objectFit: "cover",
       objectPosition: "center",
       borderRadius: 8,
@@ -309,40 +313,40 @@ const ResumePageComp = () => {
     socials: {
       display: "flex",
       flexWrap: "wrap",
-      gap: "10px 17px",
+      gap: "12px 17px",
       marginTop: 22,
     },
 
     social: {
       display: "flex",
       alignItems: "center",
-      gap: 6,
+      gap: 7,
       color: "#555",
-      fontSize: 10,
+      fontSize: 13,
       textDecoration: "none",
       overflowWrap: "anywhere",
     },
 
     socialIcon: {
-      width: 14,
-      height: 14,
+      width: 15,
+      height: 15,
       objectFit: "contain",
       flexShrink: 0,
     },
 
     section: {
-      marginTop: 27,
+      marginTop: 30,
     },
 
     sectionHeading: {
       display: "flex",
       alignItems: "center",
       gap: 12,
-      marginBottom: 13,
+      marginBottom: 15,
     },
 
     sectionTitle: {
-      fontSize: 12,
+      fontSize: 17,
       fontWeight: 800,
       textTransform: "uppercase",
       letterSpacing: "1.7px",
@@ -357,9 +361,9 @@ const ResumePageComp = () => {
     },
 
     about: {
-      fontSize: 11.5,
+      fontSize: 16,
       lineHeight: 1.8,
-      color: "#555",
+      color: "#444",
       margin: 0,
       textAlign: "justify",
     },
@@ -367,7 +371,8 @@ const ResumePageComp = () => {
     educationItem: {
       display: "flex",
       alignItems: "center",
-      fontSize: 12,
+      fontSize: 16,
+      lineHeight: 1.65,
       fontWeight: 600,
       color: "#333",
     },
@@ -375,7 +380,7 @@ const ResumePageComp = () => {
     skillGroups: {
       display: "grid",
       gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
-      gap: 15,
+      gap: 18,
 
       "@media screen and (max-width: 500px)": {
         gridTemplateColumns: "1fr",
@@ -387,37 +392,37 @@ const ResumePageComp = () => {
     },
 
     skillCategory: {
-      fontSize: 11,
+      fontSize: 15,
       fontWeight: 700,
       color: "#333",
-      marginBottom: 8,
+      marginBottom: 9,
     },
 
     skillList: {
       display: "flex",
       flexWrap: "wrap",
-      gap: 6,
+      gap: 7,
     },
 
     skill: {
-      padding: "6px 9px",
+      padding: "7px 10px",
       border: "1px solid #e5e5e5",
       borderRadius: 3,
       backgroundColor: "#fafafa",
       color: "#444",
-      fontSize: 9.5,
+      fontSize: 14,
       fontWeight: 600,
     },
 
     experienceList: {
       display: "flex",
       flexDirection: "column",
-      gap: 21,
+      gap: 25,
     },
 
     experience: {
       position: "relative",
-      paddingLeft: 16,
+      paddingLeft: 18,
       borderLeft: "2px solid #e5e5e5",
       pageBreakInside: "avoid",
       breakInside: "avoid",
@@ -426,7 +431,7 @@ const ResumePageComp = () => {
     experienceDot: {
       position: "absolute",
       left: -5,
-      top: 3,
+      top: 5,
       width: 8,
       height: 8,
       borderRadius: "50%",
@@ -441,31 +446,31 @@ const ResumePageComp = () => {
 
       "@media screen and (max-width: 500px)": {
         flexDirection: "column",
-        gap: 4,
+        gap: 5,
       },
     },
 
     experienceTitle: {
-      fontSize: 13,
+      fontSize: 18,
       fontWeight: 700,
       lineHeight: 1.4,
       color: "#202020",
     },
 
     experiencePosition: {
-      fontSize: 10.5,
+      fontSize: 15,
       fontWeight: 600,
       color: "#555",
-      marginTop: 3,
+      marginTop: 4,
     },
 
     period: {
-      fontSize: 10,
+      fontSize: 14,
       fontWeight: 600,
       color: "#777",
       textAlign: "right",
       whiteSpace: "nowrap",
-      paddingTop: 2,
+      paddingTop: 3,
 
       "@media screen and (max-width: 500px)": {
         textAlign: "left",
@@ -474,46 +479,46 @@ const ResumePageComp = () => {
 
     roleType: {
       display: "inline-block",
-      marginTop: 6,
-      padding: "3px 7px",
+      marginTop: 7,
+      padding: "4px 9px",
       borderRadius: 3,
       backgroundColor: "#f1f1f1",
       color: "#666",
-      fontSize: 8,
+      fontSize: 11,
       fontWeight: 700,
       textTransform: "uppercase",
       letterSpacing: ".7px",
     },
 
     description: {
-      marginTop: 8,
-      fontSize: 10.5,
-      lineHeight: 1.6,
+      marginTop: 10,
+      fontSize: 16,
+      lineHeight: 1.7,
       fontWeight: 600,
       color: "#444",
     },
 
     roleList: {
-      margin: "7px 0 0",
-      paddingLeft: 15,
+      margin: "9px 0 0",
+      paddingLeft: 19,
     },
 
     roleItem: {
-      fontSize: 10.5,
-      lineHeight: 1.6,
-      color: "#666",
-      marginBottom: 4,
-      paddingLeft: 2,
+      fontSize: 15.5,
+      lineHeight: 1.7,
+      color: "#555",
+      marginBottom: 5,
+      paddingLeft: 3,
     },
 
     footer: {
-      marginTop: 30,
-      paddingTop: 12,
+      marginTop: 35,
+      paddingTop: 14,
       borderTop: "1px solid #e5e5e5",
       display: "flex",
       justifyContent: "space-between",
       color: "#999",
-      fontSize: 9,
+      fontSize: 13,
     },
   };
 
@@ -550,7 +555,7 @@ const ResumePageComp = () => {
         maxWidth: "none !important",
         minHeight: "0 !important",
         margin: "0 !important",
-        padding: "15mm 16mm !important",
+        padding: "14mm 15mm !important",
         boxShadow: "none !important",
         borderRadius: "0 !important",
         backgroundColor: "#fff !important",
@@ -669,12 +674,13 @@ const ResumePageComp = () => {
 
             {portfolio.education.map((item, index) => (
               <div key={index}>
-              <div  css={styles.educationItem}>
-                {item.qualification}
-              </div>
-                <div  css={styles.educationItem}>
-                {item.university}
-              </div>
+                <div css={styles.educationItem}>
+                  {item.qualification}
+                </div>
+
+                <div css={styles.educationItem}>
+                  {item.university}
+                </div>
               </div>
             ))}
           </section>
