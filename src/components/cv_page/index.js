@@ -86,10 +86,33 @@ const ResumePageComp = () => {
     ],
 
     past_works: [
+    {
+  title: "Favvii",
+  role_type: "Remote",
+  period: "February 2022 – present",
+  position: "Mobile Application Developer",
+  description:
+    "Development of a cross-platform student lifestyle platform connecting users with restaurants, brands, services and campus events.",
+  job_role: [
+    "Led a multidisciplinary team of designers, marketers and engineers in the development of Favvii's Android and iOS applications.",
+    "Collaborated with the team to develop a web-based dashboard for managing vendor accounts and platform operations.",
+    "Contributed to building an engaging mobile experience that connects students with businesses, services and opportunities within their community."
+  ],
+  tools: [
+    "React",
+    "Next.js",
+    "Capacitor",
+    "Framer Motion",
+    "Emotion.js",
+    "Express.js",
+    "Node.js",
+    "Sequelize"
+  ],
+},
       {
         title: "Federal Ministry of Labour and Employment, Nigeria",
         role_type: "Remote",
-        period: "February 2023 – October 2024",
+        period: "February 2023 – October 2026",
         position: "Software Developer",
         description:
           "Development of an integrated government web platform supporting occupational safety and factory management processes.",
@@ -102,7 +125,7 @@ const ResumePageComp = () => {
       {
         title: "Maxbox",
         role_type: "Remote",
-        period: "January 2022 – November 2023",
+        period: "January 2022 – November 2025",
         position: "Software Developer",
         description:
           "Development of a cross-platform movie streaming application and its supporting web management dashboard.",
